@@ -1,0 +1,22 @@
+section#intro{
+    color: white;
+    position: relative;    
+    background-image: url("../img/section-intro-bg.svg");
+    background-position: relative;
+    background-repeat: no-repeat;
+    height: 100vh;
+    }
+
+    @media only screen and (max-width: 950px) {
+        div>img#logo-img {
+           padding-left: 10%;
+           padding-right: 10%;
+        }
+     }
+     
+     @media only screen and (max-width: 600px) {
+        div>img#logo-img {
+           padding-left: 10%;
+           padding-right: 10%;
+        }
+     }   
