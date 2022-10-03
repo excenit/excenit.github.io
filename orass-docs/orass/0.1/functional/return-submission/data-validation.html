@@ -179,7 +179,37 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Data validation is key to Excenit RSS. All values are validated against BoG rules. By default, data are validated during the data load process. However, data can be re-validated. Data loaded for returns must be re-validated to ensure compliance with BoG rules.
-After validation is complete (either as part of the data load process or separately), the results will be summarized in the "Data Load" tab of the return.</p>
+After validation is complete (either as part of the data load process or separately), the results will be summarized in the "Data Load" tab of the return.
+Validation marks each record as either <code>Valid</code>, <code>Warning</code>, or <code>Error</code>. Records marked as <code>Valid</code> have passed the BoG rules for each column. If a record is marked as <code>Warning</code> then it means at least one of the columns has a warning. The same goes for <code>Error</code> markings. Records that fail validation (<code>Error</code>) will not be accepted by BoG. BoG rejects an entire return even if there&#8217;s a single error.
+<code>Warnings</code> on the other hand will not be rejected by BoG, but they require attention.</p>
+</div>
+<div class="sect2">
+<h3 id="_validation_types"><a class="anchor" href="#_validation_types"></a>Validation Types</h3>
+<div class="paragraph">
+<p>Excenit RSS identifies five (5) types of validation, which are flagged as <code>Error</code> or <code>Warning</code> depending on the context.</p>
+</div>
+<div class="paragraph">
+<p>The validation types are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Decimal places</strong> - Shown when the number of decimal places exceed what BoG requires. If desired, the <em>Administrator</em> can set the system to round up all decimal values to 2 places. Otherwise, the records will be marked with <code>Error</code>.</p>
+</li>
+<li>
+<p>Invalid values -</p>
+</li>
+<li>
+<p>Missing</p>
+</li>
+<li>
+<p>Numeric sign</p>
+</li>
+<li>
+<p>Range</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -195,6 +225,11 @@ After validation is complete (either as part of the data load process or separat
 <div class="paragraph">
 <p>Follow the following steps to review the validation report for a return.</p>
 </div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-validation_step-01.png" alt="Load validation screen">
+</div>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -207,8 +242,15 @@ After validation is complete (either as part of the data load process or separat
 </div>
 <div class="imageblock unresolved">
 <div class="content">
-<img src="images/data-validation_step-01.png" alt="data validation step 01">
+<img src="images/data-validation_step-02.png" alt="Return validation screen">
 </div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Filter - Use the items here to filter the validation report. Depending on the volume of data, there will be a lot of records and Excel limits the number of records per sheet to one million. You can filter by annex, message type, or validation type. The return is automatically selected and not editable. To filter the records, select an annex within the return. All errors and warnings will be automatically displayed in the data pane. You can further filter on <code>Message Type</code> values such as  <code>Error</code>, <code>Warning</code>, or <code>All</code> to show both errors and warnings.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
