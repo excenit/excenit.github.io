@@ -65,6 +65,9 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Return Submission</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quick-tour.html">Quick Tour</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="data-loading.html">Data Loading</a>
   </li>
@@ -173,10 +176,291 @@
 <h2 id="_data_loading_overview"><a class="anchor" href="#_data_loading_overview"></a>Data Loading Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Depending on the setting, you may have to load the data for a due return. All returns have the same structure. You can either load a single annexure in a return or load the entire return.</p>
+<p>Depending on the setting, you may have to load the data for a due return. All returns have the same structure. You can either load a single annexure (corresponding to a sheet in the Excel template from BoG) in a return or load the entire return.
+All returns have the same layout and features as shown below.</p>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading_layout-04.jpg" alt="Return Layout" width="900">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Return List Browser (List of available returns).
+All returns that are due to BoG will be listed here and grouped according to status. Select a return to load its details to the right. There are five status codes:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>In Process</strong> - This means the return is ready for processing.  BoG has created this return in its system and Excenit RSS has pulled the details from the BoG API.</p>
+</li>
+<li>
+<p><strong>Data Loading</strong> - This means the data is being loaded. Typically, this status message is only possible when loading returns with a lot of records such as MAFI. Once the data load is complete, the status will change to either <em>Data Loaded with Errors</em> or <em>Data Loaded</em>.</p>
+</li>
+<li>
+<p><strong>Data Loaded with Errors</strong> - This means the data load is complete but at least one record failed validation.</p>
+</li>
+<li>
+<p><strong>Data Loaded</strong> - This means all data for the return were loaded and there are no errors or warnings to review.</p>
+</li>
+<li>
+<p><strong>Report Generated</strong> - After the report has been generated (Microsoft Excel or XML).</p>
+</li>
+<li>
+<p><strong>Pending CFO Review</strong> - The return has been submitted to the designated CFO for review. The CFO has yet to act on it.</p>
+</li>
+<li>
+<p><strong>CFO Approved</strong> - CFO has reviewed and approved the return. The return will be submitted to BoG via the API within a fixed time, which is five minutes by default but can be changed by the <em>Administrator</em>.</p>
+</li>
+<li>
+<p><strong>CFR Rejected</strong> - CFO has reviewed the return and rejected it. See the <em>Review</em> tab for optional notes from the CFO on what to correct.</p>
+</li>
+<li>
+<p><strong>Submitted to BoG</strong> - The return has been transmitted to BoG after the CFO approved. At this point, there&#8217;s nothing else to do but wait for status updates from BoG. Excenit RSS polls the BoG API at periodic intervals for updated status.</p>
+</li>
+<li>
+<p><strong>BoG Rejected</strong> - BoG has completed its validation and rejected the returns because of errors. In this state, the <em>Report Manager</em> can edit the return and fix the issues identified.</p>
+</li>
+<li>
+<p><strong>BoG Accepted</strong> - BoG has completed its validation and there are no errors with the returns. The return is no longer editable unless unlocked by the CFO. The <em>Report Manager</em> can request unlock from the CFO.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Return Metadata - This section is not editable and provides information about the return. It also includes the return in Microsoft Excel format for download. When the status of the return is <em>In Process</em>, the Excel file is usually empty, showing the blank template from BoG.
+The <em>Return Status</em> field is the same information as in 1. The <em>Reference Code</em> is the BoG code assigned to this return. <em>Reporting Officer</em>, <em>CFO</em>, <em>As Of</em>, <em>Due Date</em>, and <em>Date Signed</em> are all completed automatically by the system.
+If the <em>Administrator</em> has enabled data upload option, the <em>Report Status</em> field will also show an option to upload data. This feature is disabled by default and typically, not advisable. It is useful when the return has been prepared outside the Excenit RSS system, and you would want to use the API feature of Excenit RSS to submit to BoG. See the section on uploading returns for more information.</p>
+</li>
+<li>
+<p>Data Load Summary - This tab shows the summary of the validation of the returns.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <em>Open Error Report</em> to see the error report of the return. See more details in the Validation section.</p>
+</li>
+<li>
+<p>Click <em>Auto Refresh</em> to automatically reload the validation summary at fixed intervals. The default is every 30 seconds.</p>
+</li>
+<li>
+<p>Click <em>Stop Refresh</em> to stop the auto-refresh.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Review - This tab contains messages and notes from the CFO after review.</p>
+</li>
+<li>
+<p>Validation Summary - This page shows the summary of the validation. They are grouped by annex, Message Type (error or warning), Error Type, and the Column Name.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Load a Return</p>
+<p>Use the <em>Slider</em> to customize the available space. Slide to the right to increase the size of the <em>Return List</em> browser or to the left to reduce it. Double-click the arrow in the slide to fill the whole page with the details of the selected return.</p>
+</div>
+<div class="paragraph">
+<p>In this view a return is not editable. In order to edit a return, double-click it in the <em>Return List</em> browser to open in edit mode.</p>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading_layout-06.jpg" alt="Return layout in edit mode." width="900">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Breadcrumb Navigation - This shows you where you are in relation to the list of returns. In the image above, we have loaded the MAFI return in edit mode.</p>
+</li>
+<li>
+<p>Annexure List (Sheets in Excel Template) - All the Sheets in the return will be listed here. For example, the return below shows all the tabs of the MAFI return. MAFI 100, highlighted in purple, has been selected and therefore the data have been loaded into the <em>data pane</em> (box 9).</p>
+</li>
+<li>
+<p>Data Tabs - Lists the sections of data in an annexure. For example, in the image below, MAFI 100 is titled "Loans, Overdraft, and other Advances", which is shown here.</p>
+</li>
+<li>
+<p>Interactive Analytics - Allows you to conduct quick analyses of the data using dynamic pivot tables. See more information in the "Analytics" section.</p>
+</li>
+<li>
+<p>Dashboard - Similar to box 4, this tab allows you to view quick analytic data using pre-designed templates.</p>
+</li>
+<li>
+<p>Actions - Use this tab to perform annexure-specific tasks such as loading data for only one Sheet instead of loading all the data for the return.</p>
+</li>
+<li>
+<p>Filter Bar - Use these buttons to filter the displayed data for the annexure by error status. By default, all records are shown. Select the <em>Error</em> option to display only records with errors. Similarly, the <em>Warning</em> option shows only records with warnings. Finally, the <em>Valid</em> option lists only records in the annexure that have no validation issues.</p>
+</li>
+<li>
+<p>Records Navigator - By default, the data pane shows only 1,000 records. Use the arrows in box 8 to navigate through the records. Contact the <em>Administrator</em> to change this value. However, loading more records than 1,000 at a time will increase data load time.</p>
+</li>
+<li>
+<p>Data Pane - This is where the records in the annexure are loaded. By default, only the most relevant columns, usually those required by BoG, are loaded. The records are color-coded. Red means they have errors and purple means they have warnings. Records not colored have no issues. Click on a colored record to view details of the error or warnings. See "Validation" for more details.</p>
+</li>
+<li>
+<p>Settings - Use this button to choose the columns in the annexure that will be displayed in box 9.</p>
+</li>
+<li>
+<p>Action Bar - Use the buttons in this bar to manage the return.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <span class="image unresolved"><img src="images/data-loading_action-01.jpg" alt="Data load" width="46"></span>
+to load the data for the entire return. By default, this action both loads and validates the data.</p>
+</li>
+<li>
+<p>Click <span class="image unresolved"><img src="images/data-loading_action-02.jpg" alt="Re-validate return" width="43"></span> to re-validate data. This is important if you manually edit the data after loading.</p>
+</li>
+<li>
+<p>Click <span class="image unresolved"><img src="images/data-loading_action-03.jpg" alt="Generate report button" width="44"></span> to generate the Excel report after data loading. This only works if data has been loaded.</p>
+</li>
+<li>
+<p>Click
+<span class="image unresolved"><img src="images/data-loading_action-04.jpg" alt="Download generated report." width="44"></span> to
+download the generated Excel return.</p>
+</li>
+<li>
+<p>Click
+<span class="image unresolved"><img src="images/data-loading_action-05.jpg" alt="Reset return" width="42"></span>
+ to reset all the data on this return.</p>
+</li>
+<li>
+<p>Click
+<span class="image unresolved"><img src="images/data-loading_action-06.jpg" alt="Submit for approval" width="44"></span>
+ to submit this return to CFO for approval.</p>
+</li>
+<li>
+<p>Click
+<span class="image unresolved"><img src="images/data-loading_action-07.jpg" alt="Save changes" width="47"></span>
+ to save changes.</p>
+</li>
+<li>
+<p>Click
+<span class="image unresolved"><img src="images/data-loading_action-08.jpg" alt="Close without saving" width="43"></span>
+ to close without saving any changes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_load_a_return"><a class="anchor" href="#_load_a_return"></a>Load a Return</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To load a return, log in as a user with <em>Report Manager</em> privileges.</p>
+</li>
+<li>
+<p>In the <em>Return List</em> browser, select the return to process. Double-click to open it in the <em>Return Edit</em> pane in edit mode.</p>
+</li>
+<li>
+<p>From the <em>Action Bar</em>, click the data load button. This will open a window with options:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading_options-01.jpg" alt="Return run options." width="900">
+</div>
+</div>
+<div class="paragraph">
+<p>There are five options to consider. The default options are the most common. Only change if necessary. The most important, especially for long-running returns like MAFI, is the option to email the <em>Report Manager</em> when the data load and validation are complete. If you select "No", the data will still load in the background but there will be no notification.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Click the proceed button
+<span class="image unresolved"><img src="images/data-loading_options-02.jpg" alt="Proceed" width="47"></span> to load the data or the cancel button
+<span class="image unresolved"><img src="images/data-loading_options-03.jpg" alt="Don&#8217;t load data." width="46"></span> return to terminate the process.</p>
+</li>
+<li>
+<p>If you proceed to load from the previous step, you will see the following screen, showing the change in status to <em>Loading the data</em> :</p>
+</li>
+</ol>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading_loading-data-01.jpg" alt="Data loading" width="900">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p>If you click <em>Refresh</em>, the validation statistics will be updated as below:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading_loading-data-02.jpg" alt="Validation updated" width="900">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>You will receive an email if you opted for one in step 3.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading_-loading-data-03.jpg" alt="Email notification">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="8">
+<li>
+<p>Review the data by opening the return in edit mode.</p>
+</li>
+<li>
+<p>If a record contains errors or warnings, it will be color-coded: red for errors and purple for warnings.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading-loading-data-03.png" alt="View validation results">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_load_data_for_a_single_annex"><a class="anchor" href="#_load_data_for_a_single_annex"></a>Load Data for a Single Annex</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes it might be necessary to load data for a single annex instead of all the annexes. This approach is useful for re-loading data after errors or warnings have been addressed.</p>
+</div>
+<div class="paragraph">
+<p>To load the data for a single annex:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the annex in edit mode.</p>
+</li>
+<li>
+<p>Select the "Actions" tab.</p>
+</li>
+<li>
+<p>Click the data load button and follow the process.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/data-loading_loading-data-03.png" alt="Load single annex">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_edit_data"><a class="anchor" href="#_edit_data"></a>Edit Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While not encouraged, there are times the loaded data must be edited. Examples include data that are not readily available in the core banking database. Excenit RSS allows selective editing in some circumstances, especially for annexes with summary data such as MAFI 500 or QAFI 100.</p>
 </div>
 </div>
 </div>
