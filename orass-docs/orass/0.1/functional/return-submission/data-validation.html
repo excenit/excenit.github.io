@@ -174,6 +174,13 @@
 </aside>
 <article class="doc">
 <h1 class="page">Data Validation</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section explains the Excenit RSS validation process in detail.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_data_validation_overview"><a class="anchor" href="#_data_validation_overview"></a>Data Validation Overview</h2>
 <div class="sectionbody">
@@ -183,8 +190,11 @@ After validation is complete (either as part of the data load process or separat
 Validation marks each record as either <code>Valid</code>, <code>Warning</code>, or <code>Error</code>. Records marked as <code>Valid</code> have passed the BoG rules for each column. If a record is marked as <code>Warning</code> then it means at least one of the columns has a warning. The same goes for <code>Error</code> markings. Records that fail validation (<code>Error</code>) will not be accepted by BoG. BoG rejects an entire return even if there&#8217;s a single error.
 <code>Warnings</code> on the other hand will not be rejected by BoG, but they require attention.</p>
 </div>
-<div class="sect2">
-<h3 id="_validation_types"><a class="anchor" href="#_validation_types"></a>Validation Types</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_validation_types"><a class="anchor" href="#_validation_types"></a>Validation Types</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Excenit RSS identifies five (5) types of validation, which are flagged as <code>Error</code> or <code>Warning</code> depending on the context.</p>
 </div>
@@ -197,26 +207,30 @@ Validation marks each record as either <code>Valid</code>, <code>Warning</code>,
 <p><strong>Decimal places</strong> - Shown when the number of decimal places exceed what BoG requires. If desired, the <em>Administrator</em> can set the system to round up all decimal values to 2 places. Otherwise, the records will be marked with <code>Error</code>.</p>
 </li>
 <li>
-<p>Invalid values -</p>
+<p><strong>Invalid values</strong> - Shown when the values are different from what BoG expects for the field. For example, gender should be either Male or Female. Anything else would cause this type of issue.</p>
 </li>
 <li>
-<p>Missing</p>
+<p><strong>Missing</strong> - Shown when an expected value for a field is absent.</p>
 </li>
 <li>
-<p>Numeric sign</p>
+<p><strong>Numeric sign</strong> - Shown the sign of a numeric value deviates from the BoG rule. For example, having a negative value instead of positive. This type of violation occurs typically with financial statements where the original data has negative sign but BoG&#8217;s template and formulas expect a positive number.</p>
 </li>
 <li>
-<p>Range</p>
+<p><strong>Range</strong> - Shown when the value is outside the expected range. For example, in MAFI 100 if the <code>Loan Disbursement Date</code> is after the report <code>As Of Date</code>, a <code>Range</code> violation is reported.</p>
 </li>
 </ol>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_validate_data"><a class="anchor" href="#_validate_data"></a>Validate Data</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>If you change the loaded data or make manual entries, it is important to re-validate the data to ensure compliance with BoG rules. To validate a return, click the <span class="image"><img src="../_images/data-loading_action-02.jpg" alt="Validate data button"></span> in the <code>Action Bar</code> button to re-validate. All annexes in the return will be validated and the validation report updated.</p>
+</div>
+<div class="paragraph">
+<p>If you want to validate a single annex, navigate to that <code>Action</code> tab on that annex and click the validate button.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -248,16 +262,16 @@ Validation marks each record as either <code>Valid</code>, <code>Warning</code>,
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Filter - Use the items here to filter the validation report. Depending on the volume of data, there will be a lot of records and Excel limits the number of records per sheet to one million. You can filter by annex, message type, or validation type. The return is automatically selected and not editable. To filter the records, select an annex within the return. All errors and warnings will be automatically displayed in the data pane. You can further filter on <code>Message Type</code> values such as  <code>Error</code>, <code>Warning</code>, or <code>All</code> to show both errors and warnings.</p>
+<p>Filter - Use the items here to filter the validation report. Depending on the volume of data, there will be a lot of records and Excel limits the number of records per sheet to one million. You can filter by annex, message type, or validation type. The return is automatically selected and not editable. To filter the records, select an annex within the return. All errors and warnings will be automatically displayed in the data pane. You can further filter on <code>Message Type</code> values such as  <code>Error</code>, <code>Warning</code>, or <code>All</code> to show both errors and warnings. You can also filter on the <code>Validation Type</code>. Each filtering selection is executed automatically.</p>
+</li>
+<li>
+<p>Export -  Export the validation results from the <code>data pane</code> into Excel. Remember, Excel limits the number of records in a sheet to one million, so use as many filters as possible to limit the number of records. The Excel file will be downloaded into your browser&#8217;s default download folder. The exported data look exactly as appears in the <code>data pane</code>.</p>
+</li>
+<li>
+<p>The <code>data page</code> contains the filtered validation results. The last column, <code>Message</code> provides detailed explanation of the error. The <code>Row #</code> column points to the record in the <code>staging</code> or <code>data warehouse</code> where the data from the core banking environment or other sources are stored for loading.</p>
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_export_validation_report"><a class="anchor" href="#_export_validation_report"></a>Export Validation Report</h2>
-<div class="sectionbody">
-
 </div>
 </div>
 </article>
