@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Orass Documentation</title>
+    <title>Workflow :: Orass Documentation</title>
     <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/functional/return-submission/workflow.html">
+    <meta name="description" content="Submit returns for review and approval">
     <meta name="generator" content="Antora 3.1.1">
     <link rel="stylesheet" href="../../../../assets/css/site.css">
     <script>var uiRootPath = '../../../../assets'</script>
@@ -181,7 +182,199 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-
+<h1 class="page">Workflow</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section explains how the workflow works. All returns must be approved before going to BoG.</p>
+</div>
+<div class="paragraph">
+<p>Go to <a href="#_workflow_playlist">Workflow Playlist</a> section below for video tutorials (a playlist) on how to use the Excenit RSS workflow.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After generating the report, it is now time to submit for review. By default, a user with the <code>Report Approver</code> role is assigned to the return. If there are multiple users with the <code>Report Approver</code> role, one is selected at random. The <code>Report Approver</code> corresponds to the CFO/Representative section of the attestation form (AF100) of each return. Returns can be re-assigned to other <code>approvers</code> if the default one is unavailable. Contact the <em>Administrator</em> to re-assign returns.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_submit_for_approval"><a class="anchor" href="#_submit_for_approval"></a>Submit for Approval</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can only submit a return whose status is <code>Report Generated</code>. Only users with the <code>Report Manager</code> role can prepare and submit a return for review.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To submit a return for approval, open the return in edit mode.</p>
+</li>
+<li>
+<p>If you are not the original <code>Report Manager</code> who prepared this return, the system will prompt you to switch ownership. After switching ownership, close and re-open the return.
+<span class="image"><img src="../_images/workflow_step-02.jpg" alt="Confirm switching ownership."></span></p>
+</li>
+<li>
+<p>Ensure that in the <code>Metadata</code> section, the <code>Reporting Officer</code> field has your name. In addition, the report name should be visible next to the <code>Report</code> field. If any of these conditions are violated, please contact your <em>Administrator</em> or regenerate the return. <span class="image"><img src="../_images/workflow_step-01.png" alt="Return ready for approval."></span></p>
+</li>
+<li>
+<p>In the <code>Action Bar</code> click <span class="image"><img src="../_images/data-loading_action-06.jpg" alt="Submit for approval"></span> button to submit for approval.</p>
+</li>
+<li>
+<p>Confirm that you want to submit for approval. Confirmation means you are signing the attestation form (<code>AF100</code>) that is attached to the BoG template for this return.
+<span class="image"><img src="../_images/workflow_step-02.png" alt="Confirm approval."></span>
+After confirmation, <code>AF100</code> in the return will be populated with the name of the reporting officer and the current date. The selected CFO will be notified by email and the status of the return will change to <code>Pending CFO Review</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_review_return"><a class="anchor" href="#_review_return"></a>Review Return</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If a return is ready for review, the assigned CFO will receive an email after the <code>Report Manager</code> submits it. If the return was submitted but email wasn&#8217;t received, please contact the <em>Administrator</em> who will re-assign the return to expected approver.</p>
+</div>
+<div class="paragraph">
+<p>To review a return:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in as a user with <code>Report Approver</code> role. By default, the users with <code>Report Approver</code> roles can not edit any other parts of the system.</p>
+</li>
+<li>
+<p>Go to <strong>Workflow</strong>&#8594; <em>My Task Queue</em> &#8594; <em>Pack Approval</em> &#8594; CFO Reviews. The number of pending returns will be in parentheses. In the screenshot below, there is one pending return to be reviewed. <span class="image"><img src="../_images/workflow_step-03.png" alt="Opening a due return"></span></p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Open it from the right pane by double-clicking. This screen is similar to the one used by the <code>Report Manager</code> to prepare the return, but the content cannot be edited by the <code>Report Approver</code>. There are four important sections of this screen.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><em>Metadata</em> - Here you will find the report file (in Excel), the status of the return (<code>Pending CFO Review</code>), the <code>Reporting Officer</code>, the <code>CFO</code>, the <code>As Of</code> date, and the date the <code>Reporting Officer</code> signed the return. Ensure that all these fields have the correct values. If not, please contact the <em>Administrator</em> or the <code>Report Manager</code> to review and correct.</p>
+</li>
+<li>
+<p><em>Error Report</em> - Click this link to open the detailed validation summary attached to this return.</p>
+</li>
+<li>
+<p><em>Review</em> - Use this space to send a message to the <code>Report Manager</code> who prepared this return.</p>
+</li>
+<li>
+<p><em>Action Bar</em> - Contains the buttons to <code>approve</code>, <code>reject</code> the return or close this window without any action.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In the <code>Metadata</code> section, click the report file to download and review.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/workflow_step-04.jpg" alt="Review a return"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reject_a_return"><a class="anchor" href="#_reject_a_return"></a>Reject a Return</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After reviewing a return, you can approve or reject. To reject a return, go to the <em>Review</em> tab and provide feedback that will go back to the <code>Report Manager</code>. After that, click the <code>Reject</code> button in the <code>Action Bar</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/workflow_step-05.jpg" alt="Reject return">
+</div>
+</div>
+<div class="paragraph">
+<p>The system will ask you to confirm rejection, after which the <code>Report Manager</code> will be notified via email and the status of the return will change to <code>CFO Rejected</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_review_a_rejected_return"><a class="anchor" href="#_review_a_rejected_return"></a>Review a Rejected Return</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If a return is rejected, the <code>Report Manager</code> who prepared the return will receive a notification via email. The status of the return will change to <code>CFO Rejected</code>. You can only make changes to such a return before resubmitting.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_approve_and_submit_a_return"><a class="anchor" href="#_approve_and_submit_a_return"></a>Approve and Submit a Return</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the return has no issues, you can instead approve it.After approval, it will be submitted to BoG.</p>
+</div>
+<div id="WARNING" class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Once you approve a return, it will be submitted to BoG, typically within five minutes. The only way to stop a return from going to BoG is if the <em>Administrator</em> stops the process within the allotted time.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_re_assign_returns"><a class="anchor" href="#_re_assign_returns"></a>Re-assign Returns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes it may be necessary to re-assign the approval of a return to someone else. Only the <em>Administrator</em> can do this.</p>
+</div>
+<div class="paragraph">
+<p>To re-assign a return:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in as a user with administrative privileges.</p>
+</li>
+<li>
+<p>Go to <strong>Workflow</strong>&#8594;_User Tasks_. This will open the screen below.</p>
+</li>
+<li>
+<p>Go to the <code>Filter</code> box to select the parameters, including the process.</p>
+</li>
+<li>
+<p>Click <code>Apply</code>. The list of processes that have been submitted for approval and meet the criteria above will be displayed.</p>
+</li>
+<li>
+<p>Select the task you want to re-assign.</p>
+</li>
+<li>
+<p>Click the <code>Reassign task</code> button, which will open the <code>Task reassignment</code> window.</p>
+</li>
+<li>
+<p>Select the new assignee and click <code>OK</code>.</p>
+</li>
+<li>
+<p>The new assignee can now log in and the task will be available under <strong>Workflow</strong>&#8594; <em>My Task Queue</em>.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/workflow_step-07.jpg" alt="Re-assign approval">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workflow_playlist"><a class="anchor" href="#_workflow_playlist"></a>Workflow Playlist</h2>
+<div class="sectionbody">
+<div class="videoblock">
+<div class="title">Excenit RSS Workflow</div>
+<div class="content">
+<iframe width="900" height="500" src="https://www.youtube.com/embed/ZANEziG30oA?rel=0&amp;list=PLzmI8z8xuIgcyPViuylqjDIsQ3FWSvm45" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>
