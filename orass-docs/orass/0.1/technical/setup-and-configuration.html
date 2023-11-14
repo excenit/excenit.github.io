@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: Orass Documentation</title>
     <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/technical/setup-and-configuration.html">
-    <meta name="generator" content="Antora 3.1.1">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../assets/css/site.css">
-    <script>var uiRootPath = '../../../assets'</script>
 <link rel="icon" href="../../../favicon.ico" type="image/x-icon">  </head>
   <body class="article">
 <header class="header">
@@ -46,6 +45,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
     <h3 class="title"><a href="../index.html">Orass Documentation</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
@@ -93,7 +93,7 @@
     <a class="nav-link" href="../functional/security-management/audit-logs.html">Audit Logs</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../functional/security-management/user-creation.html">User Creation</a>
+    <a class="nav-link" href="../functional/security-management/user-management.html">User Management</a>
   </li>
 </ul>
   </li>
@@ -120,6 +120,9 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">System Overview and Architecture</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="system-overview-and-architecture/rss-architecture.html">RSS Architecture</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="system-overview-and-architecture/application-database.html">Application Database</a>
   </li>
@@ -183,7 +186,9 @@
 <div class="sect1">
 <h2 id="_institution_information"><a class="anchor" href="#_institution_information"></a>Institution Information</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>During setup, you will provide information about your financial institution. These data are also available in the returns.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -195,16 +200,36 @@
 <div class="sect1">
 <h2 id="_email"><a class="anchor" href="#_email"></a>Email</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>RSS uses email to notify uses about various system events and statuses. There are two primary email systems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Internal with RSS using Microsoft Exchange</p>
+</li>
+<li>
+<p>SMTP</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By default, RSS uses <a href="mailto:orass@excenit.com">orass@excenit.com</a>, which is configured for Microsoft Exchange Online to manage all internal
+communications. However, this email system is controlled by Excenit and we strongly advice that you update the parameters
+in Azure if this is the preferred email system.</p>
+</div>
+<div class="paragraph">
+<p>Only one email system can be used at any time. You must set the default email engine in <em>Application Properties</em>. The default
+system is Microsoft Exchange using the <a href="mailto:orass@excenit.com">orass@excenit.com</a> email address.</p>
+</div>
 <div class="sect2">
 <h3 id="_smtp"><a class="anchor" href="#_smtp"></a>SMTP</h3>
-
+<div class="paragraph">
+<p>To use SMTP as the email system, edit the configuration parameters with your SMTP credentials and ports.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_microsoft_exchange"><a class="anchor" href="#_microsoft_exchange"></a>Microsoft Exchange</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_default_email"><a class="anchor" href="#_default_email"></a>Default Email</h3>
 
 </div>
 </div>
@@ -212,6 +237,9 @@
 <div class="sect1">
 <h2 id="_scheduled_tasks"><a class="anchor" href="#_scheduled_tasks"></a>Scheduled Tasks</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>RSS uses schedules</p>
+</div>
 <div class="sect2">
 <h3 id="_new_returns"><a class="anchor" href="#_new_returns"></a>New Returns</h3>
 

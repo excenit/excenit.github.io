@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quick Tour Around Excenit RSS :: Orass Documentation</title>
-    <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/functional/return-submission/quick-tour.html">
-    <meta name="description" content="Gives a brief tour of the Excenit Return Submission Solution (RSS) system.">
+    <title>User Management :: Orass Documentation</title>
+    <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/functional/security-management/user-management.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../assets/css/site.css">
 <link rel="icon" href="../../../../favicon.ico" type="image/x-icon">  </head>
@@ -66,23 +65,23 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Return Preparation and Submission</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="quick-tour.html">Quick Tour</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../return-submission/quick-tour.html">Quick Tour</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="data-loading.html">Data Loading</a>
+    <a class="nav-link" href="../return-submission/data-loading.html">Data Loading</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="data-validation.html">Data Validation</a>
+    <a class="nav-link" href="../return-submission/data-validation.html">Data Validation</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="analytics.html">Analytics</a>
+    <a class="nav-link" href="../return-submission/analytics.html">Analytics</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="report-generation.html">Report Generation</a>
+    <a class="nav-link" href="../return-submission/report-generation.html">Report Generation</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="workflow.html">Workflow</a>
+    <a class="nav-link" href="../return-submission/workflow.html">Workflow</a>
   </li>
 </ul>
   </li>
@@ -91,10 +90,10 @@
     <span class="nav-text">Security Management</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../security-management/audit-logs.html">Audit Logs</a>
+    <a class="nav-link" href="audit-logs.html">Audit Logs</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../security-management/user-management.html">User Management</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="user-management.html">User Management</a>
   </li>
 </ul>
   </li>
@@ -175,8 +174,8 @@
   <ul>
     <li><a href="../../index.html">Orass Documentation</a></li>
     <li>Functional</li>
-    <li>Return Preparation and Submission</li>
-    <li><a href="quick-tour.html">Quick Tour</a></li>
+    <li>Security Management</li>
+    <li><a href="user-management.html">User Management</a></li>
   </ul>
 </nav>
 </div>
@@ -185,152 +184,76 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Quick Tour Around Excenit RSS</h1>
+<h1 class="page">User Management</h1>
 <div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<h2 id="_user_roles"><a class="anchor" href="#_user_roles"></a>User Roles</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_required_functional_roles"><a class="anchor" href="#_required_functional_roles"></a>Required Functional Roles</h3>
 <div class="paragraph">
-<p>Excenit RSS is a web-based solution that is generally intuitive and easy to use. However, this manual explains important concepts that may not be obvious. This quick tour around the system begins with how to log in, how to navigate various sections, and how to customize the workspace, layout, and appearance.</p>
-</div>
-<div class="paragraph">
-<p>See <a href="#_video">Video Tour</a> below for a video of this walk-through.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_log_in"><a class="anchor" href="#_log_in"></a>Log in</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can log into Excenit RSS using either username and password that was created on the system or single-sign on credentials. Check with your administrator for the correct information. If you have single-sign on such as Microsoft, you will use your email address and password to log in.</p>
+<p>RSS requires users to be assigned functions. These are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Enter username and password. If you are working from a private computer, check the <em>Remember Me</em> box to store your password.
-Click <em>Log in</em> or press enter to enter the system.</p>
+<p><strong>Report Manager</strong> - Owns and manages the reporting process,</p>
 </li>
 <li>
-<p>If your company uses single-sign on, you will have to enter the username and password of your single-sign on provider such as Microsoft Exchange email and password.</p>
+<p><strong>Report Approver</strong> (CFO) - Approves returns before they are submitted to BoG, and</p>
+</li>
+<li>
+<p><strong>Admin</strong> - The administrator who manages the technical aspects of the system.</p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/quick-tour_welcome-screen-01.png" alt="Welcome screen" width="800">
-</div>
+<div class="paragraph">
+<p>Each of these functions are mapped to specific user roles. RSS includes three default roles that map to these functions.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If the username/password combination is wrong, the following image appears:</p>
+<p>Report Manager - <em><strong>orass-report-manager</strong></em></p>
+</li>
+<li>
+<p>CFO - <em><strong>orass-report-approver</strong></em></p>
+</li>
+<li>
+<p>Admin - <em><strong>orass-system-admin</strong></em></p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/quick-tour_invalid-credentials-01.png" alt="Invalid password message" width="701">
+<div class="paragraph">
+<p>Other roles can be created as necessary. RSS uses a very fine-grained permission system. This means that permissions can be granted
+at the table, column, and even row levels. In addition, users can be given permissions to various sections of the screen.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_default_and_pre_configured_roles"><a class="anchor" href="#_default_and_pre_configured_roles"></a>Default and Pre-configured Roles</h3>
+<div class="paragraph">
+<p>The default <em>Report Manager</em> role controls all Submission Packs ("packs"). RSS also included pre-configured roles for other
+packs, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>MAFI (orass-mafi-report-manager)</strong>,</p>
+</li>
+<li>
+<p><strong>MFBK (orass-mfbk-report-manager)</strong>, etc.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Enter correct credentials or reset your password. Click <em>Reset Password</em> or contact administrator to reset your password.
-There is more information on managing passwords in the "Managing Account" section.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_layout"><a class="anchor" href="#_layout"></a>Layout</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The image below shows the key sections of the home screen. Since Excenit RSS is strictly role-based, the menus on your screen will be different from the one below depending on your current role.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/quick-tour_layout-01.png" alt="Welcome screen layout" width="800">
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Returns menu
-This is main menu for managing returns. Returns are organized by submission frequency. Only returns that you have access to will be visible. For all the menus, click the parent item to hide or unhide the items.</p>
-</li>
-<li>
-<p>Other menus
-These are the menus for other parts of the system such as managing the data warehouse/staging, the security, setup and others.</p>
-</li>
-<li>
-<p>Hide menu bar
-You can create more working space by hiding the entire side menu. This button toggles the sidebar menu on or off. When off, you will have more screen space.</p>
-</li>
-<li>
-<p>Settings/Log out
-The gears icon will open the settings screen. In the settings screen, you can customize the appearance of your workspace.
-The door icon will exit the system.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_customize_appearance"><a class="anchor" href="#_customize_appearance"></a>Customize Appearance</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The default theme uses medium-sized fonts. This should work for most people, but it is possible to customize the settings.</p>
+<p>The pre-configured roles follow the naming convention&#8201;&#8212;&#8201;{orass}-{pack-code}-{report-manager}.</p>
 </div>
 <div class="paragraph">
-<p>Follow the steps below to customize the appearance.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong><em>Help</em></strong> &#8594; <em>Theme Settings</em> to open the <em>Theme Settings</em> window.</p>
-</li>
-<li>
-<p>Go to <strong>Mode</strong> to select either light or dark mode.</p>
-</li>
-<li>
-<p>Go to <strong>Size</strong> to select from three pre-defined sizes - small, medium, large. The <em>Preview</em> pane below show how the changes will appear in the rest of the application.</p>
-</li>
-<li>
-<p>When satisfied with your options, remember to click <em>Apply</em> to save the changes.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/quick-tour_customize-01.png" alt="Changing theme settings" width="900">
+<p>In addition, there are other specialized pre-configured roles, including <strong>orass-data-loader</strong>, who can manage data loading or API.
+Remember all these roles can be modified and new ones created. There are pre-configured to ensure RSS works out-of-the box.</p>
 </div>
 </div>
-<div class="paragraph">
-<p>You can also customize other parts of the screen, including the language, time zone, and default screen.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/quick-tour_customize-02.png" alt="Customize the layout" width="900">
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <em>Settings</em> icon at the bottom of the sidebar.</p>
-</li>
-<li>
-<p>In the <em>Settings</em> page, choose from many options to customize.</p>
-</li>
-<li>
-<p>Click <em>OK</em> to save changes and exit.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_video"><a class="anchor" href="#_video"></a>Video Tour</h2>
-<div class="sectionbody">
-<div class="videoblock">
-<div class="content">
-<iframe width="900" height="450" src="https://www.youtube.com/embed/H9BYG_otbDQ?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
+<div class="sect2">
+<h3 id="_create_user"><a class="anchor" href="#_create_user"></a>Create User</h3>
+
 </div>
 </div>
 </div>
