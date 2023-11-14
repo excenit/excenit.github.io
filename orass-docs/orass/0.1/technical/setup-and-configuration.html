@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Orass Documentation</title>
+    <title>Setup &amp; Configuration :: Orass Documentation</title>
     <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/technical/setup-and-configuration.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../assets/css/site.css">
@@ -183,25 +183,86 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_institution_information"><a class="anchor" href="#_institution_information"></a>Institution Information</h2>
+<h1 class="page">Setup &amp; Configuration</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>During setup, you will provide information about your financial institution. These data are also available in the returns.</p>
+<p>Excenit RSS is highly configurable, which ensures that the system can meet different needs at different times. In addition, local
+administrators can make changes without calling in support.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_api_configuration"><a class="anchor" href="#_api_configuration"></a>API Configuration</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_email"><a class="anchor" href="#_email"></a>Email</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>RSS uses email to notify uses about various system events and statuses. There are two primary email systems:</p>
+<p>Most configurations are located under the <em><strong>System</strong></em> menu, and they cover settings such as institution information,  API credentials, email options,
+scheduled tasks, security including password complexity, auditing, report loading options, enable single-sign on with Azure AD integration, and many others.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Getting Around Application Properties</div>
+<div class="paragraph">
+<p>You can easily navigate around the properties by going to <strong>System</strong> &#8594; <strong>Application Properties</strong> and typing the property of interest
+in the search box.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_update_basic_configuration"><a class="anchor" href="#_update_basic_configuration"></a>Update Basic Configuration</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_institution_information"><a class="anchor" href="#_institution_information"></a>Institution Information</h3>
+<div class="paragraph">
+<p>During setup, you will provide information about your financial institution. These data are also available in the returns.
+If you don&#8217;t provide them, they will be populated using the first returns that are retrieved from BoG&#8217;s ORASS API.</p>
+</div>
+<div class="paragraph">
+<p>To update the institution information, a user with the default <em>orass-system-admin</em> role (or equivalent) would follow the steps below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <em><strong>System</strong></em> &#8594; in the menu bar to the left.</p>
+</li>
+<li>
+<p>Click <em>Application Properties</em> to open the configuration page.</p>
+</li>
+<li>
+<p>In the <em>Search by property name</em> field at the top of the page, type in <code>institution</code>, which will show the list of options.</p>
+</li>
+<li>
+<p>Edit the three key fields as necessary. These should be obtained from the Bank of Ghana ORASS system.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="functional:institution-setup-01.png" alt="Institution Information Configuration">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_api_configuration"><a class="anchor" href="#_api_configuration"></a>API Configuration</h3>
+<div class="paragraph">
+<p>Change the API credentials under the API <code>authentication</code> node on the Application Properties page.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<code>excenit</code> &#8594; <code>orass</code> &#8594; <code>api</code> &#8594; <code>settings</code>
+</div>
+</div>
+<div class="paragraph">
+<p>Update the <code>username</code> and <code>password</code> with the <strong>machine id</strong> credentials from ORASS. Any other credential would not work.
+To test that the credentials are working, go to the <strong>Scheduled Tasks</strong> menu and execute <strong>Get Pending Returns</strong> task. For more information on how to execute
+tasks, see the <a href="#_scheduled_tasks">Scheduled Tasks</a> section below on this page.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, update the API url in the <code>url</code> node. This configuration is useful when BoG&#8217;s endpoint changes or returns need to be
+submitted to the test system. The default values resolve to the production ORASS API.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_email_system"><a class="anchor" href="#_email_system"></a>Email System</h3>
+<div class="paragraph">
+<p>Excenit RSS uses email to notify uses about various system events and statuses. There are two primary email systems:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -209,7 +270,7 @@
 <p>Internal with RSS using Microsoft Exchange</p>
 </li>
 <li>
-<p>SMTP</p>
+<p>SMTP configuration</p>
 </li>
 </ul>
 </div>
@@ -219,46 +280,96 @@ communications. However, this email system is controlled by Excenit and we stron
 in Azure if this is the preferred email system.</p>
 </div>
 <div class="paragraph">
-<p>Only one email system can be used at any time. You must set the default email engine in <em>Application Properties</em>. The default
+<p>Only one email system can be used at any time.You must set the default email engine in <em>Application Properties</em>.The default
 system is Microsoft Exchange using the <a href="mailto:orass@excenit.com">orass@excenit.com</a> email address.</p>
 </div>
-<div class="sect2">
-<h3 id="_smtp"><a class="anchor" href="#_smtp"></a>SMTP</h3>
+<div class="sect3">
+<h4 id="_microsoft_exchange"><a class="anchor" href="#_microsoft_exchange"></a>Microsoft Exchange</h4>
 <div class="paragraph">
-<p>To use SMTP as the email system, edit the configuration parameters with your SMTP credentials and ports.</p>
+<p>To use the Microsoft Exchange as the default email system:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate the <code>engine</code> property in the <code>options</code> node.</p>
+</li>
+<li>
+<p>Select <strong>MICROSOFT_ACTIVE_DIRECTORY</strong> in the <code>Current Value</code> field and click <code>OK</code> to save.
+<span class="image unresolved"><img src="functional:email-setup-01.png" alt="Default email engine selection"></span></p>
+</li>
+<li>
+<p>If you use the default configuration connect to <a href="mailto:orass@excenit.com">orass@excenit.com</a>, there is nothing else to do. However, if you need to use
+your organization&#8217;s Azure Active Directory, settings you need to configure additional settings in the next step.</p>
+</li>
+<li>
+<p>Navigate to <code>excenit</code>&#8594;`auth`&#8594;`microsoft` and provide the configuration parameters for your organizations. These are advanced configurations
+, and they should match exactly what is available in Azure.
+<span class="image unresolved"><img src="functional:email-setup-02.png" alt="Additional email configuration"></span></p>
+<div class="sidebarblock">
+<div class="content">
+The settings in this node are also used for the Single-Sign On feature.
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_smtp_server"><a class="anchor" href="#_smtp_server"></a>SMTP Server</h4>
+<div class="paragraph">
+<p>To configure email using the SMTP settings, navigate to the <code>excenit</code>&#8594;`email` node.
+The most important parameters are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>excenit.email.smtpHost</code></p>
+</li>
+<li>
+<p><code>excenit.email.smtpPassword</code></p>
+</li>
+<li>
+<p><code>excenit.email.smtpPort</code></p>
+</li>
+<li>
+<p><code>excenit.email.smtpUser</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The values to these properties must point to a valid SMTP configuration.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_microsoft_exchange"><a class="anchor" href="#_microsoft_exchange"></a>Microsoft Exchange</h3>
-
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_scheduled_tasks"><a class="anchor" href="#_scheduled_tasks"></a>Scheduled Tasks</h2>
-<div class="sectionbody">
+<h3 id="_scheduled_tasks"><a class="anchor" href="#_scheduled_tasks"></a>Scheduled Tasks</h3>
 <div class="paragraph">
 <p>RSS uses schedules</p>
 </div>
-<div class="sect2">
-<h3 id="_new_returns"><a class="anchor" href="#_new_returns"></a>New Returns</h3>
+<div class="sect3">
+<h4 id="_new_returns"><a class="anchor" href="#_new_returns"></a>New Returns</h4>
 
 </div>
-<div class="sect2">
-<h3 id="_return_status"><a class="anchor" href="#_return_status"></a>Return Status</h3>
+<div class="sect3">
+<h4 id="_return_status"><a class="anchor" href="#_return_status"></a>Return Status</h4>
 
 </div>
-<div class="sect2">
-<h3 id="_reset_returns"><a class="anchor" href="#_reset_returns"></a>Reset Returns</h3>
+<div class="sect3">
+<h4 id="_reset_returns"><a class="anchor" href="#_reset_returns"></a>Reset Returns</h4>
 
 </div>
-<div class="sect2">
-<h3 id="_submit_returns"><a class="anchor" href="#_submit_returns"></a>Submit Returns</h3>
+<div class="sect3">
+<h4 id="_submit_returns"><a class="anchor" href="#_submit_returns"></a>Submit Returns</h4>
 
 </div>
-<div class="sect2">
-<h3 id="_update_return_status"><a class="anchor" href="#_update_return_status"></a>Update Return Status</h3>
+<div class="sect3">
+<h4 id="_update_return_status"><a class="anchor" href="#_update_return_status"></a>Update Return Status</h4>
 
+</div>
+<div class="sect3">
+<h4 id="_data_loading"><a class="anchor" href="#_data_loading"></a>Data Loading</h4>
+
+</div>
 </div>
 </div>
 </div>
