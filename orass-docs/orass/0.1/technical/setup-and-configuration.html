@@ -203,6 +203,21 @@ in the search box.</p>
 </div>
 </div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Changes to the configuration parameters affect the entire system. Please ensure you have reviewed all materials on this page completely before
+making any changes. When in doubt, reach out to Excenit RSS support as <a href="mailto:support@excenit.com">support@excenit.com</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -220,13 +235,13 @@ If you don&#8217;t provide them, they will be populated using the first returns 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <em><strong>System</strong></em> &#8594; in the menu bar to the left.</p>
+<p>Go to <em><strong>System</strong></em> in the menu bar to the left.</p>
 </li>
 <li>
-<p>Click <em>Application Properties</em> to open the configuration page.</p>
+<p>Click <em><strong>Application Properties</strong></em> to open the configuration page.</p>
 </li>
 <li>
-<p>In the <em>Search by property name</em> field at the top of the page, type in <code>institution</code>, which will show the list of options.</p>
+<p>In the <em><strong>Search by property name</strong></em> field at the top of the page, type in <code>institution</code>, which will show the list of options.</p>
 </li>
 <li>
 <p>Edit the three key fields as necessary. These should be obtained from the Bank of Ghana ORASS system.</p>
@@ -235,7 +250,7 @@ If you don&#8217;t provide them, they will be populated using the first returns 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../functional/_images/institution-setup-01.png" alt="Institution Information Configuration">
+<img src="../functional/_images/institution-setup-01.jpg" alt="Institution Information Configuration">
 </div>
 </div>
 </div>
@@ -295,16 +310,16 @@ system is Microsoft Exchange using the <a href="mailto:orass@excenit.com">orass@
 </li>
 <li>
 <p>Select <strong>MICROSOFT_ACTIVE_DIRECTORY</strong> in the <code>Current Value</code> field and click <code>OK</code> to save.
-<span class="image"><img src="../functional/_images/email-setup-01.png" alt="Default email engine selection"></span></p>
+<span class="image"><img src="../functional/_images/email-setup-01.jpg" alt="Default email engine selection"></span></p>
 </li>
 <li>
 <p>If you use the default configuration connect to <a href="mailto:orass@excenit.com">orass@excenit.com</a>, there is nothing else to do. However, if you need to use
 your organization&#8217;s Azure Active Directory, settings you need to configure additional settings in the next step.</p>
 </li>
 <li>
-<p>Navigate to <code>excenit</code>&#8594;`auth`&#8594;`microsoft` and provide the configuration parameters for your organizations. These are advanced configurations
+<p>Navigate to the <code>excenit&#8594;auth&#8594;microsoft</code> node and provide the configuration parameters for your organizations. These are advanced configurations
 , and they should match exactly what is available in Azure.
-<span class="image"><img src="../functional/_images/email-setup-02.png" alt="Additional email configuration"></span></p>
+<span class="image"><img src="../functional/_images/email-setup-02.jpg" alt="Additional email configuration"></span></p>
 <div class="sidebarblock">
 <div class="content">
 The settings in this node are also used for the Single-Sign On feature.
@@ -344,31 +359,143 @@ The most important parameters are:</p>
 <div class="sect2">
 <h3 id="_scheduled_tasks"><a class="anchor" href="#_scheduled_tasks"></a>Scheduled Tasks</h3>
 <div class="paragraph">
-<p>Excenit RSS uses scheduled tasks to execute</p>
+<p>Excenit RSS uses scheduled tasks to execute several tasks. Several tasks have been pre-configured to retrieve new and available returns from the ORASS API,
+submit new returns, check the status of submitted returns, load data from sources, including core banking application into the
+staging database/warehouse.</p>
+</div>
+<div class="paragraph">
+<p>These tasks have been configured to run at specific intervals. These intervals can be changed. Familiarity with the Unix cron jobs system is assumed.
+Tasks can also be executed manually, and new tasks can be added. However, adding new tasks is a highly specialized function that the Excenit RSS support team
+will provide.</p>
+</div>
+<div class="paragraph">
+<p>All pre-configured tasks are disabled by default. They must be activated to run at the specified times or intervals.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+Tasks must be activated in order to execute at specified intervals. Once a task is active, it is uneditable until deactivated.
+</div>
+</div>
+<div class="sect3">
+<h4 id="_executing_tasks"><a class="anchor" href="#_executing_tasks"></a>Executing Tasks</h4>
+<div class="paragraph">
+<p>To execute a task, ensure it is activated. To activate a task, just select it and click the <code>Activate</code> button (in red box). Upon activation the <code>Active</code> box will be checked.
+Once the task is active, it will run at the specified time/intervals. Default tasks use a cron expression to specify the run times. Periodic intervals can also be used
+to execute tasks.</p>
+</div>
+<div class="paragraph">
+<p>Tasks can also be executed immediately by clicking the <code>Execute</code> button (blue box).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../functional/_images/scheduled-task-01.jpg" alt="Activate a task"></span></p>
+</div>
+<div class="paragraph">
+<p>To edit a task, click the <code>Edit</code> button (green box) to open the editor.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../functional/_images/scheduled-task-02.jpg" alt="Edit a scheduled task"></span></p>
+</div>
+<div class="paragraph">
+<p>To edit the run times for a task, use the <code>Cron Expression</code> text box (red box) to input the cron command. Click the help icon for more help on how to write cron expressions.
+You can also configure tasks to execute periodically (<code>Period</code>) or with a fixed delay (<code>Fixed Delay</code>)  (green box). All three options yield the same results.
+With the <code>Period</code> and <code>Fixed Delay</code> options, you must specify the period to execute the task in seconds.</p>
+</div>
+<div class="paragraph">
+<p>Remember to save all changes and reactivate task after edits.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Syntactically incorrect expressions might lead to unexpected results. Be sure to validate all new expressions or use the template provided.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Caution</div>
+<p>Edit pre-configured scheduled tasks with care. They might be inoperable without Excenit RSS support.</p>
+</div>
+<div class="paragraph">
+<p>The next few sections describe some of the key pre-configured tasks that are necessary for the effective functioning of Excenit RSS.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_new_returns"><a class="anchor" href="#_new_returns"></a>New Returns</h4>
-
+<div class="paragraph">
+<p>New returns from the ORASS API are managed by the <code>getPendingReturns</code> method. By default, it is scheduled to execute every day between 8 am and 9pm at the top of the hour.
+To update the time, edit the task and specify a new time. This default configuration is sufficient for most financial institutions, but it can be changed based on the types of returns that need to be submitted.
+When new returns are created the user with the <code>orass-report-manager</code> role will receive an email notification.</p>
 </div>
-<div class="sect3">
-<h4 id="_return_status"><a class="anchor" href="#_return_status"></a>Return Status</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_reset_returns"><a class="anchor" href="#_reset_returns"></a>Reset Returns</h4>
-
 </div>
 <div class="sect3">
 <h4 id="_submit_returns"><a class="anchor" href="#_submit_returns"></a>Submit Returns</h4>
-
+<div class="paragraph">
+<p>When a return has been approved by the CFO (or the user assigned the <code>orass-report-approver</code> role) approves a return, this task, <code>submitPendingReturns</code> picks it up and submits to BoG through the ORASS API.
+By default, it executes every five minutes. The task will notify both the assigned <code>orass-report-approver</code> and the <code>orass-report-manager</code> who prepared the return by email. The notification will
+report the status of the submission as either <code>Accepted by BoG</code> or <code>Rejected by BoG</code>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When a return status is <strong>Accepted by BoG</strong> it only means the transmission was successful and waiting review and approval by BoG.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_update_return_status"><a class="anchor" href="#_update_return_status"></a>Update Return Status</h4>
-
+<div class="paragraph">
+<p>After a return transmission has been accepted by the ORASS API, the <code>updateSubmittedReturns</code> task continuously checks with the ORASS API for a change in status.
+When the status changes, the task will notify the approving <code>orass-report-approver</code> and the <code>orass-report-manager</code>. This task also executes every five minutes and can be
+configured as necessary.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_reset_returns"><a class="anchor" href="#_reset_returns"></a>Reset Returns</h4>
+<div class="paragraph">
+<p>The <code>resetReturns</code> task restores all returns to their original state and assumes that no return has been submitted.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This task should be used sparingly, perhaps with Excenit RSS Support team to reset the system. Improper use can cause system instability.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_data_loading"><a class="anchor" href="#_data_loading"></a>Data Loading</h4>
-
+<div class="paragraph">
+<p>The <code>populate{XXXXXX}SourceData</code> tasks are used to load data from source into the staging environment. Like all other tasks, it can be configured to run at specific intervals.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Be cautious when editing pre-configured tasks. They can have unexpected consequences, including non-submission of returns or retrieval of new returns.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -377,17 +504,13 @@ The most important parameters are:</p>
 <h2 id="_security"><a class="anchor" href="#_security"></a>Security</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_default_roles"><a class="anchor" href="#_default_roles"></a>Default Roles</h3>
-
-</div>
-<div class="sect2">
 <h3 id="_single_sign_on"><a class="anchor" href="#_single_sign_on"></a>Single Sign-On</h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_submission_mode"><a class="anchor" href="#_submission_mode"></a>Submission Mode</h2>
+<h2 id="_report_options"><a class="anchor" href="#_report_options"></a>Report Options</h2>
 <div class="sectionbody">
 
 </div>
@@ -396,6 +519,15 @@ The most important parameters are:</p>
 <h2 id="_etl_options"><a class="anchor" href="#_etl_options"></a>ETL Options</h2>
 <div class="sectionbody">
 
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_settings"><a class="anchor" href="#_other_settings"></a>Other Settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many more configurable options in Application Properties, and they all follow the same format as described above. They have
+very descriptive names</p>
+</div>
 </div>
 </div>
 </article>
