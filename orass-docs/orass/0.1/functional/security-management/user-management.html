@@ -140,6 +140,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../technical/setup-and-configuration.html">Setup And Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text">Backup &amp; Recovery</span>
+  </li>
 </ul>
   </li>
 </ul>
@@ -191,7 +194,7 @@
 <div class="sect2">
 <h3 id="_required_functional_roles"><a class="anchor" href="#_required_functional_roles"></a>Required Functional Roles</h3>
 <div class="paragraph">
-<p>RSS requires users to be assigned functions. These are:</p>
+<p>RSS requires users to be assigned functions.These are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -207,7 +210,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Each of these functions are mapped to specific user roles. RSS includes three default roles that map to these functions.</p>
+<p>Each of these functions are mapped to specific user roles.RSS includes three default roles that map to these functions.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -230,7 +233,7 @@ at the table, column, and even row levels. In addition, users can be given permi
 <div class="sect2">
 <h3 id="_default_and_pre_configured_roles"><a class="anchor" href="#_default_and_pre_configured_roles"></a>Default and Pre-configured Roles</h3>
 <div class="paragraph">
-<p>The default <em>Report Manager</em> role controls all Submission Packs ("packs"). RSS also included pre-configured roles for other
+<p>The default <em>Report Manager</em> role controls all Submission Packs("packs"). RSS also included pre-configured roles for other
 packs, including:</p>
 </div>
 <div class="ulist">
@@ -244,7 +247,7 @@ packs, including:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The pre-configured roles follow the naming convention&#8201;&#8212;&#8201;{orass}-{pack-code}-{report-manager}.</p>
+<p>The pre-configured roles follow the naming convention&#8201;&#8212;&#8201;<code>orass-XYZK-report-manager</code>, where <code>XYZK</code> is the code identifier for the pack.</p>
 </div>
 <div class="paragraph">
 <p>In addition, there are other specialized pre-configured roles, including <strong>orass-data-loader</strong>, who can manage data loading or API.
@@ -253,7 +256,62 @@ Remember all these roles can be modified and new ones created. There are pre-con
 </div>
 <div class="sect2">
 <h3 id="_create_user"><a class="anchor" href="#_create_user"></a>Create User</h3>
-
+<div class="paragraph">
+<p>Excenit RSS uses system-defined users or other directory protocol systems such as Microsoft Azure AD, or LDAP.
+Users from an external system such as Microsoft Azure AD must</p>
+</div>
+<div class="olist arabic">
+<div class="title">To create a user:</div>
+<ol class="arabic">
+<li>
+<p>Navigate to <strong>Security&#8594;Users</strong>.</p>
+</li>
+<li>
+<p>Click <code>Create</code> to add a new user.</p>
+</li>
+<li>
+<p>Enter the user information. Required fields are highlighted in red.</p>
+</li>
+<li>
+<p>You can enforce password change at next logon by checking the <code>Change Password at Next Logon</code> box.</p>
+</li>
+<li>
+<p>Assign the role to the user by clicking <code>Add' in the `Roles</code> section. See <a href="#_user_roles">User Roles</a> for more details on the types of roles available.
+A user can have multiple roles. However, the most permissive role will take precedence. Select the roles you want to assign the user from the list below.
+Press <code>Ctrl</code> on your keyboard to select and assign multiple roles.</p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+You can use email as the username to minimize forgotten username/password.
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image unresolved"><img src="functional:create-user-01.jpg" alt="Create User"></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Filter the list roles by typing in the first few characters in the <code>Name</code> field.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image unresolved"><img src="functional:create-user-02.jpg" alt="Assign roles"></span></p>
+</div>
+<div class="paragraph">
+<p>If a desired role isn&#8217;t available at the time of creating the user, one can be created by clicking the <code>Create</code> button.
+Similarly, existing roles can be modified by clicking the <code>Edit</code> button or create a new role by copying an existing one.</p>
+</div>
+<div class="paragraph">
+<p>Once a user is created, a notification will be sent to the email address created in the previous step. If</p>
+</div>
 </div>
 </div>
 </div>

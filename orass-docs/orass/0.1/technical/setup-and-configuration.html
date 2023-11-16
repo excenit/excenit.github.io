@@ -140,6 +140,9 @@
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="setup-and-configuration.html">Setup And Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text">Backup &amp; Recovery</span>
+  </li>
 </ul>
   </li>
 </ul>
@@ -230,7 +233,7 @@ making any changes. When in doubt, reach out to Excenit RSS support as <a href="
 If you don&#8217;t provide them, they will be populated using the first returns that are retrieved from BoG&#8217;s ORASS API.</p>
 </div>
 <div class="paragraph">
-<p>To update the institution information, a user with the default <em>orass-system-admin</em> role (or equivalent) would follow the steps below:</p>
+<p>To update the institution information, a user with the default <code>orass-system-admin</code> role (or equivalent) would follow the steps below:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -318,15 +321,17 @@ your organization&#8217;s Azure Active Directory, settings you need to configure
 </li>
 <li>
 <p>Navigate to the <code>excenit&#8594;auth&#8594;microsoft</code> node and provide the configuration parameters for your organizations. These are advanced configurations
-, and they should match exactly what is available in Azure.
-<span class="image"><img src="../functional/_images/email-setup-02.jpg" alt="Additional email configuration"></span></p>
+, and they should match exactly what is available in Azure.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../functional/_images/email-setup-02.jpg" alt="Additional email configuration"></span></p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 The settings in this node are also used for the Single-Sign On feature.
 </div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
@@ -482,7 +487,21 @@ This task should be used sparingly, perhaps with Excenit RSS Support team to res
 <div class="sect3">
 <h4 id="_data_loading"><a class="anchor" href="#_data_loading"></a>Data Loading</h4>
 <div class="paragraph">
-<p>The <code>populate{XXXXXX}SourceData</code> tasks are used to load data from source into the staging environment. Like all other tasks, it can be configured to run at specific intervals.</p>
+<p>The <code>populate{XXXXXX}SourceData</code> tasks are used to load data from source into the staging environment. Like all other tasks, it can be configured to run at specific intervals.
+When executed this task:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>identifies returns with <code>PROCESS_INITIATED</code> status,</p>
+</li>
+<li>
+<p>checks the staging database/warehouse for data with the submission period that matches the report date of the return,</p>
+</li>
+<li>
+<p>loads any data from the source environments, including core banking</p>
+</li>
+</ol>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -503,16 +522,50 @@ Be cautious when editing pre-configured tasks. They can have unexpected conseque
 <div class="sect1">
 <h2 id="_security"><a class="anchor" href="#_security"></a>Security</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Excenit RSS offers several security options, which are configurable in <strong>Application Properties</strong> and elsewhere.</p>
+</div>
 <div class="sect2">
-<h3 id="_single_sign_on"><a class="anchor" href="#_single_sign_on"></a>Single Sign-On</h3>
-
+<h3 id="_single_sign_on_sso"><a class="anchor" href="#_single_sign_on_sso"></a>Single Sign-On (SSO)</h3>
+<div class="paragraph">
+<p>The default login mechanism for Excenit RSS is system-specific username and password. In addition to that, RSS can be integrated with Azure AD
+or any LDAP system for credential management. Integration with Azure AD is pre-configured, which means you will only need to update
+specific properties to use it. By default, single-sign on with Azure AD is disabled.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Before enabling SSO, ensure that you have updated the properties in the <code>microsoft</code> node.</p>
+</div>
+<div class="paragraph">
+<div class="title">SSO Settings</div>
+<p><span class="image"><img src="../functional/_images/email-setup-02.jpg" alt="SSO Setup" width="140" title="SSO Settings"></span></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To enable SSO with Azure AD, search for the <code>useSSO</code> property and set the value to <code>YES</code>.</p>
+</div>
+<div class="paragraph">
+<p>When SSO is enabled, users can log in with their Azure AD username and password, most likely email address and password. Users will still need to be assigned the appropriate roles before they log in.
+This means users can&#8217;t log in unless they&#8217;ve been added to the list of approved users.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_report_options"><a class="anchor" href="#_report_options"></a>Report Options</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>There are several configurable report options. These can be found under the <code>excenit&#8594;orass&#8594;return</code> node on the <strong>Application Properties</strong> page.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
