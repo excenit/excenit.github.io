@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Orass Documentation</title>
+    <title>Staging Database/Warehouse :: Orass Documentation</title>
     <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/technical/system-overview-and-architecture/staging-database.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../assets/css/site.css">
@@ -187,7 +187,50 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-
+<h1 class="page">Staging Database/Warehouse</h1>
+<div class="paragraph">
+<p>The staging database (warehouse) as at the heart of Excenit RSS. It sits as the bridge between all sources of data
+required to generate returns and the Excenit RSS application, which processes and submits them to the ORASS API.</p>
+</div>
+<div class="paragraph">
+<p>It is a platform-agnostic RDBMS (e.g., Oracle, MySQL, SQL Server, PostgreSQL) that houses most of the ETL processes and
+logic for computing and transforming data, etc.</p>
+</div>
+<div class="paragraph">
+<p>The staging database comprises multiple systems and processes, including:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Header tables&#8201;&#8212;&#8201;each data element required by ORASS is mapped to a header id</p>
+</li>
+<li>
+<p>GL mapping lookup tables&#8201;&#8212;&#8201;each header id is mapped to a table field or a set of GLs</p>
+</li>
+<li>
+<p>Stored procedures and functions&#8201;&#8212;&#8201;logic to generate values for each header id</p>
+</li>
+<li>
+<p>Report (detail) tables&#8201;&#8212;&#8201;final tables with the data for each return</p>
+</li>
+<li>
+<p>Source data&#8201;&#8212;&#8201;all sources of data, including primarily core banking application, HR systems, flat files, data warehouse,
+etc.</p>
+</li>
+<li>
+<p>Schedulers&#8201;&#8212;&#8201;execute stored procedures to load data into staging</p>
+</li>
+<li>
+<p>DB Links&#8201;&#8212;&#8201;if necessary create a db link to source data</p>
+</li>
+<li>
+<p>Validation and upload scripts&#8201;&#8212;&#8201;if files are received from external sources, monitoring scripts validate and load them into staging.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../functional/_images/staging-env-01.jpg" alt="Staging environment"></span></p>
+</div>
 </article>
   </div>
 </main>
