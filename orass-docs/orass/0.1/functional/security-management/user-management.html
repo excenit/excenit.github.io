@@ -280,12 +280,15 @@ Users from an external system such as Microsoft Azure AD must</p>
 A user can have multiple roles. However, the most permissive role will take precedence. Select the roles you want to assign the user from the list below.
 Press <code>Ctrl</code> on your keyboard to select and assign multiple roles.</p>
 </li>
-</ol>
-</div>
+<li>
+<p>You can impose additional security requirements on a user by restricting the IPs from which they can connect to the RSS system.</p>
 <div class="sidebarblock">
 <div class="content">
 You can use email as the username to minimize forgotten username/password.
 </div>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="../_images/create-user-01.jpg" alt="Create User"></span></p>
@@ -310,8 +313,47 @@ Filter the list roles by typing in the first few characters in the <code>Name</c
 Similarly, existing roles can be modified by clicking the <code>Edit</code> button or create a new role by copying an existing one.</p>
 </div>
 <div class="paragraph">
-<p>Once a user is created, a notification will be sent to the email address created in the previous step. If</p>
+<p>Once a user is created, a notification will be sent to the email address created in the previous step. If password change is required, they must do so in accordance with the
+password complexity rules defined in <strong>Application Properties</strong>.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_manage_user_roles"><a class="anchor" href="#_manage_user_roles"></a>Manage User Roles</h3>
+<div class="paragraph">
+<p>You can examine the "effective role" of a user, i.e., the resources a user can access. This is useful when troubleshooting access adn permission issues.
+To examine the effective role of a user, select the user from the Users screen and click the <strong>Additional</strong> button.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/create-user-03.jpg" alt="Effective Role"></span></p>
+</div>
+<div class="paragraph">
+<p>In the example above, the user Daniel Adoko has access to specific screens including <strong>Returns</strong> but has no access to the <strong>Dashboard</strong>, <strong>Workflow</strong> and <strong>System</strong>.
+Additional permissions or restrictions, which are not in the roles assigned to this user can be granted/imposed. For example,  even though the user has access
+to the <strong>MAFI</strong> returns, for business reasons, this user isn&#8217;t permitted to download the returns.
+This restriction can be imposed through the UI tab of the Effective Role screen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_advanced_system_access"><a class="anchor" href="#_advanced_system_access"></a>Advanced System Access</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Excenit RSS provides a unique feature known as <strong>Access Groups</strong>, which allow users to be segregated manner. Consider a hypothetical bank,
+Ghana Freedom Bank Inc. that has multiple divisions responsible for specific reports with their own CFO and the data must only be visible to members of that division.
+With Excenit RSS, we can create an Access Group that corresponds to the daily forex returns. Returns created and submitted to BoG will only be visible to members of that group, in addition to all other assigned roles as described in <a href="#_user_roles">User Roles</a>.</p>
+</div>
+<div class="paragraph">
+<p>The Access Group can also be used to capture data from other sources that are outside the core banking system but are needed for preparing reports, or subsidiaries that are separate entities but must supply data for reporting.</p>
+</div>
+<div class="paragraph">
+<p>By default, all users are created under the <strong>Company</strong> group. Other groups can be created for several use-cases, include those outlined above.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/create-user-04.jpg" alt="Managing Access Groups"></span></p>
+</div>
+<div class="paragraph">
+<p>In addition to creating groups, uses can be moved across groups with simple clicks, specific constraints and restrictions can be defined for uses.</p>
 </div>
 </div>
 </div>

@@ -193,7 +193,7 @@
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Depending on the setting, you may have to load the data for a due return. All returns have the same structure. You can either load a single annexure (corresponding to a sheet in the Excel template from BoG) in a return or load the entire return.
+<p>Depending on the setting, you may have to load the data for a due return. All returns have the same structure. You can either load a single report (corresponding to a sheet in the Excel template from BoG) in a return or load the entire return.
 All returns have the same layout and features as shown below.</p>
 </div>
 <div class="imageblock">
@@ -269,7 +269,7 @@ If the <em>Administrator</em> has enabled data upload option, the <em>Report Sta
 <p>Review - This tab contains messages and notes from the CFO after review.</p>
 </li>
 <li>
-<p>Validation Summary - This page shows the summary of the validation. They are grouped by annex, Message Type (error or warning), Error Type, and the Column Name.</p>
+<p>Validation Summary - This page shows the summary of the validation. They are grouped by report, Message Type (error or warning), Error Type, and the Column Name.</p>
 </li>
 </ol>
 </div>
@@ -290,10 +290,10 @@ If the <em>Administrator</em> has enabled data upload option, the <em>Report Sta
 <p>Breadcrumb Navigation - This shows you where you are in relation to the list of returns. In the image above, we have loaded the MAFI return in edit mode.</p>
 </li>
 <li>
-<p>Annexure List (Sheets in Excel Template) - All the Sheets in the return will be listed here. For example, the return below shows all the tabs of the MAFI return. MAFI 100, highlighted in purple, has been selected and therefore the data have been loaded into the <em>data pane</em> (box 9).</p>
+<p>Report List (Sheets in Excel Template) - All the Sheets in the return will be listed here. For example, the return below shows all the tabs of the MAFI return. MAFI 100, highlighted in purple, has been selected and therefore the data have been loaded into the <em>data pane</em> (box 9).</p>
 </li>
 <li>
-<p>Data Tabs - Lists the sections of data in an annexure. For example, in the image below, MAFI 100 is titled "Loans, Overdraft, and other Advances", which is shown here.</p>
+<p>Data Tabs - Lists the sections of data in a sheet/report . For example, in the image below, MAFI 100 is titled "Loans, Overdraft, and other Advances", which is shown here.</p>
 </li>
 <li>
 <p>Interactive Analytics - Allows you to conduct quick analyses of the data using dynamic pivot tables. See more information in the "Analytics" section.</p>
@@ -302,19 +302,31 @@ If the <em>Administrator</em> has enabled data upload option, the <em>Report Sta
 <p>Dashboard - Similar to box 4, this tab allows you to view quick analytic data using pre-designed templates.</p>
 </li>
 <li>
-<p>Actions - Use this tab to perform annexure-specific tasks such as loading data for only one Sheet instead of loading all the data for the return.</p>
+<p>Actions - Use this tab to perform report-specific tasks such as loading data for only one Sheet instead of loading all the data for the return.</p>
 </li>
 <li>
-<p>Filter Bar - Use these buttons to filter the displayed data for the annexure by error status. By default, all records are shown. Select the <em>Error</em> option to display only records with errors. Similarly, the <em>Warning</em> option shows only records with warnings. Finally, the <em>Valid</em> option lists only records in the annexure that have no validation issues.</p>
+<p>Filter Bar - Use these buttons to filter the displayed data for the sheet/report by error status. By default, all records are shown. Select the <em>Error</em> option to display only records with errors. Similarly, the <em>Warning</em> option shows only records with warnings. Finally, the <em>Valid</em> option lists only records in the reports that have no validation issues.</p>
 </li>
 <li>
 <p>Records Navigator - By default, the data pane shows only 1,000 records. Use the arrows in box 8 to navigate through the records. Contact the <em>Administrator</em> to change this value. However, loading more records than 1,000 at a time will increase data load time.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The default records to be displayed can be modified in the <a href="https://xxx">.</a>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
-<p>Data Pane - This is where the records in the annexure are loaded. By default, only the most relevant columns, usually those required by BoG, are loaded. The records are color-coded. Red means they have errors and purple means they have warnings. Records not colored have no issues. Click on a colored record to view details of the error or warnings. See "Validation" for more details.</p>
+<p>Data Pane - This is where the records in the report are loaded. By default, only the most relevant columns, usually those required by BoG, are loaded. The records are color-coded. Red means they have errors and purple means they have warnings. Records not colored have no issues. Click on a colored record to view details of the error or warnings. See "Validation" for more details.</p>
 </li>
 <li>
-<p>Settings - Use this button to choose the columns in the annexure that will be displayed in box 9.</p>
+<p>Settings - Use this button to choose the columns in the report that will be displayed in box 9.</p>
 </li>
 <li>
 <p>Action Bar - Use the buttons in this bar to manage the return.</p>
@@ -445,18 +457,18 @@ download the generated Excel return.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_load_data_for_a_single_annex"><a class="anchor" href="#_load_data_for_a_single_annex"></a>Load Data for a Single Annex</h2>
+<h2 id="_load_data_for_a_single_report_excel_sheet"><a class="anchor" href="#_load_data_for_a_single_report_excel_sheet"></a>Load Data for a Single Report (Excel Sheet)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sometimes it might be necessary to load data for a single annex instead of all the annexes. This approach is useful for re-loading data after errors or warnings have been addressed.</p>
+<p>Sometimes it might be necessary to load data for a single report instead of the entire pack. This approach is useful for re-loading data after errors or warnings have been addressed.</p>
 </div>
 <div class="paragraph">
-<p>To load the data for a single annex:</p>
+<p>To load the data for a single report:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Navigate to the annex in edit mode.</p>
+<p>Navigate to the report/sheet in edit mode.</p>
 </li>
 <li>
 <p>Select the "Actions" tab.</p>
@@ -468,7 +480,7 @@ download the generated Excel return.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/data-loading_loading-data-03.png" alt="Load single annex">
+<img src="../_images/data-loading_loading-data-03.png" alt="Load single report">
 </div>
 </div>
 </div>
@@ -477,7 +489,202 @@ download the generated Excel return.</p>
 <h2 id="_edit_data"><a class="anchor" href="#_edit_data"></a>Edit Data</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While not encouraged, there are times the loaded data must be edited. Examples include data that are not readily available in the core banking database. Excenit RSS allows selective editing in some circumstances, especially for annexes with summary data such as MAFI 500 or QAFI 100.</p>
+<p>While not encouraged, there are times the loaded data must be edited. Examples include data that are not readily
+available in the core banking database. Excenit RSS allows selective editing in some circumstances, especially for reports with summary data such as MAFI 500 or QAFI 100.</p>
+</div>
+<div class="paragraph">
+<p>When editing is enabled, new records can either be inserted or loaded data on the screen can be modified.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+All data edits are logged when audit logging is enabled.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">To insert a record on a report with editing enabled:</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the report. In the example below, we want to insert records
+for <em>MAFI 500&#8201;&#8212;&#8201;Details of Non-Current Assets Held for Sale</em>, which aren&#8217;t available in a standard way.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If a report has multiple sections, there will likely be tabs within the report.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click the <code>Add</code> button to insert a new record, which will add a new empty row.</p>
+</li>
+<li>
+<p>Type in the data for the record and save.</p>
+</li>
+<li>
+<p>You can add additional rows before or after saving.</p>
+</li>
+<li>
+<p>If enabled, automatic validation will be triggered to ensure the new data would meet ORASS requirements.</p>
+</li>
+<li>
+<p>Optional. Inserted data can be edited or deleted.</p>
+</li>
+<li>
+<p>Save the pack when complete and manually initiate validation if desired.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/insert-data-01.jpg" alt="Insert data"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/insert-data-02.jpg" alt="&quot;Inserd data 2"></span></p>
+</div>
+<div class="olist arabic">
+<div class="title">To edit an existing data:</div>
+<ol class="arabic">
+<li>
+<p>Navigate to a report that permits editing.</p>
+</li>
+<li>
+<p>Double-click the field to edit.</p>
+</li>
+<li>
+<p>Save the record and save the pack.</p>
+</li>
+<li>
+<p>Validate if necessary.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_import"><a class="anchor" href="#_data_import"></a>Data Import</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some Excenit RSS license options allow for the import of data directly into the software for validation and submission to
+the ORASS API.</p>
+</div>
+<div class="olist arabic">
+<div class="title">There are two ways to import data directly into the application:</div>
+<ol class="arabic">
+<li>
+<p>Customized Report Import - import data for specific reports only.</p>
+</li>
+<li>
+<p>Global Import - import entire return, including all reports/sheets and</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_customized_report_import"><a class="anchor" href="#_customized_report_import"></a>Customized Report Import</h3>
+<div class="paragraph">
+<p>Currently, Excenit RSS allows <code>customized report import</code> on selected reports within a return. Using this feature requires the data
+to be provided in a format specified by Excenit RSS. Typically, customized imports are enabled for reports for which
+the data are unlikely to reside in the core banking application.</p>
+</div>
+<div class="olist arabic">
+<div class="title">To import data into a sheet:</div>
+<ol class="arabic">
+<li>
+<p>Identify the template for the report of interest. This is available in the <code>Templates</code> page.</p>
+</li>
+<li>
+<p>Navigate to a return that allows bulk import, e.g., MAFI 1000</p>
+</li>
+<li>
+<p>Locate the <code>Import</code> button on the tab.</p>
+</li>
+<li>
+<p>Upload the data</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/upload-selected-01.jpg" alt="Upload data"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_global_import"><a class="anchor" href="#_global_import"></a>Global Import</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+A user with <code>orass-system-admin</code> privileges must enable <code>data import</code> in <strong>Application Properties</strong> before use.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When global import is enabled, the import button is available for the entire pack. When it is not enabled, the
+<em>Report Metadata</em> section shows the attached report template, which can be downloaded.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/impor-data-01.jpg" alt="Global import"></span></p>
+</div>
+<div class="paragraph">
+<p>After import is enabled, the <code>Upload Data</code> button is enabled.
+<span class="image"><img src="../_images/import-data-03.jpg" alt="Global import enabled"></span></p>
+</div>
+<div class="olist arabic">
+<div class="title">To import an entire pack:</div>
+<ol class="arabic">
+<li>
+<p>Click the <code>Upload Data</code> button and navigate to the file.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Global import only works with the BoG template for the select pack.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Select the file you want to upload. Depending on the size of the file the next screen might take a while to load since the file must be loaded into memory.</p>
+</li>
+<li>
+<p>On the <code>Confirmation</code> screen choose an import option:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Import and replace&#8201;&#8212;&#8201;the final return to BoG will use the file that was uploaded.</p>
+</li>
+<li>
+<p>Import&#8201;&#8212;&#8201;only the data will be imported and the standard templates will be used to generate the returns.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>All the data in the file will be extracted and inserted into Excenit RSS. In addition, they will be validated for accuracy.
+<span class="image"><img src="../_images/import-data-04.jpg" alt="Global import options"></span></p>
+</li>
+<li>
+<p>When complete, you can proceed to examine data, review error log, or submit for approval.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
