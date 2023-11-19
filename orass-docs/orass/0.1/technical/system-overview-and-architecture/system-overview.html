@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>System Overview &amp; Features :: Orass Documentation</title>
+    <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/technical/system-overview-and-architecture/system-overview.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../assets/css/site.css">
+<link rel="icon" href="../../../../favicon.ico" type="image/x-icon">  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.excenitapps.com">Orass Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://excenit.com/products/excenit-return-submission-solution">Excenit RSS</a>
+            <a class="navbar-item" href="https://excenit.com/products/exceniterp">Excenit ERP</a>
+            <a class="navbar-item" href="https://excenit.com/products/excenit-insurance">Excenit Insurance</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://excenit.com">Excenit Home</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="orass" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
+    <h3 class="title"><a href="../../index.html">Orass Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Functional</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Return Preparation and Submission</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/return-submission/quick-tour.html">Quick Tour</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/return-submission/data-loading.html">Data Loading</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/return-submission/data-validation.html">Data Validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/return-submission/analytics.html">Analytics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/return-submission/report-generation.html">Report Generation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/return-submission/workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/security-management/audit-logs.html">Audit Logs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/security-management/user-management.html">User Management</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Other</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../functional/others/complaints.html">Complaints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technical</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System Overview and Architecture</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="system-overview.html">System Overview and Features</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="rss-architecture.html">RSS Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="application-database.html">Application Database</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="application-server.html">Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="etl.html">ETL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="staging-database.html">Staging Database</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system-requirements.html">System Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../setup-and-configuration.html">Setup And Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup-and-recovery.html">Backup &amp; Recovery</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Orass Documentation</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Orass Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Orass Documentation</a></li>
+    <li>Technical</li>
+    <li>System Overview and Architecture</li>
+    <li><a href="system-overview.html">System Overview and Features</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">System Overview &amp; Features</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Excenit RSS automates the submission of ORASS returns to BoG for all financial institutions, including banks. On this page, we provide an overview of the salient features of the system and the requirements for effective implementation and operation.</p>
+</div>
+<div class="paragraph">
+<p>Excenit RSS is an end-to-end solution that manages all aspects of the return submission, including extracting the data from the core banking application database (and other sources), validating the data to meet BoG rules, formatting the data to conform to BoG requirements, generating the final returns, and submitting the returns directly to the ORASS API. In addition, Excenit RSS includes analytic tools – interactive dashboards and pivot tables – for reviewing data and measuring performance, a set of workflow tools for reviewing returns, and a secure system for ensuring that only authorized persons can access and use the system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_system_requirements"><a class="anchor" href="#_system_requirements"></a>System Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Table 1 shows the minimum hardware and software requirements to for Excenit RSS. The table includes the requirements for three environments – the RSS application server, the staging database, and the end user. These requirements can be exceeded to improve performance.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. Excenit RSS Hardware &amp; Software Requirements</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">Application Server</th>
+<th class="tableblock halign-left valign-top">Staging Database</th>
+<th class="tableblock halign-left valign-top">Application Database</th>
+<th class="tableblock halign-left valign-top">End User</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">CPU</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">X64 Processor</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Intel i5+, AMD, M1+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Intel Xeon with Intel EM64T support</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">AMD Opteron</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RAM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8GB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">OS</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Windows Server 12+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Windows 10+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Ubuntu 18.04LTS+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 14+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mac OS X+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500GB (SSD)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2TB (SSD)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2TB (SSD)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">250GB (SSD/HDD)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Database</p></td>
+<td class="tableblock halign-center valign-top" rowspan="4"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">PostgreSQL 12+</p></td>
+<td class="tableblock halign-center valign-top" rowspan="4"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Oracle Database 12c+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Microsoft SQL Server 2012+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">MySQL Database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Other Software</p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Apache Tomcat 9+</p></td>
+<td class="tableblock halign-center valign-top" colspan="2" rowspan="3"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Excel 2013+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Edge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Chrome</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_architecture"><a class="anchor" href="#_basic_architecture"></a>Basic Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Excenit RSS implements a simple architecture that connects seamlessly with the client’s environment. The final environment is configurable and revolves the seven key processes outlined in Figure 1.</p>
+</div>
+<div class="paragraph">
+<p>RSS comprises six key systems and servers as shown in Figure 2:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Core Banking Application Database</strong>&#8201;&#8212;&#8201;this is the primary data source, which will contain data needed for returns.</p>
+</li>
+<li>
+<p><strong>Other Systems</strong>&#8201;&#8212;&#8201;systems that contain other information including human resources, accounting (if not using the core banking application), flat files, among others.</p>
+</li>
+<li>
+<p><strong>RSS Staging Database</strong>&#8201;&#8212;&#8201;a database that holds data extracted from the core banking application database and other source systems.</p>
+</li>
+<li>
+<p>RSS <strong>Application Database</strong> –- a database that holds final data for returns.</p>
+</li>
+<li>
+<p>RSS <strong>Application Server</strong>&#8201;&#8212;&#8201;an Apache Tomcat server, which hosts the application and manages the entire process.</p>
+</li>
+<li>
+<p>BoG <strong>ORASS API</strong>&#8201;&#8212;&#8201;the source for information on returns and submission of pending returns.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../functional/_images/rss-basic-overview-02.jpg" alt="Simple Overview"></span></p>
+</div>
+<div class="paragraph">
+<p>These systems connect to each other to create a fully functional Excenit RSS system. The servers identified in Figure 2 need not be physical computers. A virtualized environment provides similar performance. In addition, while not encouraged, some systems can share resources. For example, the RSS database can be located on the application server.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_rss_features"><a class="anchor" href="#_key_rss_features"></a>Key RSS Features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>RSS has several key modules, which are loosely-coupled yet, provide a seamless end-to-end automation experience.</p>
+</div>
+<div class="sect2">
+<h3 id="_extract_transform_and_load_with_data_mapping"><a class="anchor" href="#_extract_transform_and_load_with_data_mapping"></a>Extract, Transform, and Load with Data Mapping</h3>
+<div class="paragraph">
+<p>A key feature of the Excenit RSS is building an ETL process to automate data collection from various sources. The ETL process is central to Excenit RSS and typically requires the most effort. The ETL process maps the data elements from primary sources to the BoG format. The primary source is the core banking database. We recognize that not all data elements required for the ORASS returns reside in the core banking application, therefore during development, we collaborate with owners of key systems to identify and prepare data from other sources.</p>
+</div>
+<div class="olist arabic">
+<div class="title">The ETL preparation process includes:</div>
+<ol class="arabic">
+<li>
+<p>Developing parameterized queries to connect to data sources. The parameterized query ensures that RSS can extract only the data needed for a return. For example, for January 2022 MAFI returns, the end date which is defined in the BoG ORASS system as 31st January 2022, will be passed as a parameter to the query, ensuring that only data for that period are extracted from the source system into the staging database.</p>
+</li>
+<li>
+<p>Developing queries with internal data extraction rule and criteria. To match the format specified by BoG, Excenit collaborates with the report owners (typically the Finance and technology teams) to identify business rules to map data from source to BoG formats.</p>
+</li>
+<li>
+<p>Testing results of queries frequently and thoroughly to ensure that all returns are accurate.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_loadingreport_preparation"><a class="anchor" href="#_data_loadingreport_preparation"></a>Data Loading/Report Preparation</h3>
+<div class="paragraph">
+<p>When returns are due to BoG, officers can either load the returns manually (with a single click) or configure returns to execute automatically (without human intervention) when due.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RSS loads data by triggering the ETL to retrieve data from the core banking system database to the staging database, matching BoG’s data template which is then loaded to the application.</p>
+</li>
+<li>
+<p>RSS allows a manual file for upload either a whole return pack or individual sheets in the return pack.</p>
+</li>
+<li>
+<p>On some returns, users can edit values that have been loaded. However, it is important that the returns are re-validated whenever there are manual edits to the data. By default, manual edits to returns</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_validation"><a class="anchor" href="#_data_validation"></a>Data Validation</h3>
+<div class="paragraph">
+<p>Validation is a key feature of Excenit RSS, which includes all BoG specified rules for data elements through a custom rules engine, which is updated to reflect changes to BoG specifications when necessary. Excenit implements validation during the ETL development and during return loading. Excenit RSS</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>validates data for each field in each record against BoG validation rules in the data loading process,</p>
+</li>
+<li>
+<p>provides a detailed validation report for errors and warnings review, it does this for individual sheets in a return type, validation report can also be downloaded in an Excel format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>During the initial ETL development, Excenit collaborates extensively with the client team to correct problems identified during validation. Data cleaning is a major task that requires significant resources from the client. Excenit encourages clients to clean data from source, although it is possible to make corrections in the staging environment. Subject to contractual requirements, Excenit can assist with data cleaning.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_return_generation"><a class="anchor" href="#_return_generation"></a>Return Generation</h3>
+<div class="paragraph">
+<p>Excenit RSS populates the BoG return templates (Microsoft Excel or XML) with data that validated. Reports generated and submitted for approval.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_return_submission"><a class="anchor" href="#_return_submission"></a>Return Submission</h3>
+<div class="paragraph">
+<p>Upon approval, RSS submits returns to BoG as scheduled. The system administrator configures the frequency, it can wait for a defined time set to send report to BoG. Rejected returns must be revalidated and regenerated. RSS monitors BoG’s API for status changes to submitted returns. It must be noted that current limitations with BoG’s API means errors and warnings in returns must be retrieved manually from the ORASS portal. The deployment process ensures that the likelihood of rejection is eliminated.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_api"><a class="anchor" href="#_api"></a>API</h3>
+<div class="paragraph">
+<p>Excenit RSS is tightly integrated with BoG’s ORASS API. This means all return parameters are retrieved from the API. Specifically, Excenit RSS</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Periodically connect to BoG’s ORASS API to retrieve pending returns,</p>
+</li>
+<li>
+<p>Uses information on pending returns to initiate the ETL process (optional),</p>
+</li>
+<li>
+<p>Notifies relevant users of pending returns,</p>
+</li>
+<li>
+<p>Submits approved returns to BoG, and</p>
+</li>
+<li>
+<p>Updates status of return using data from BoG’s ORASS API.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_workflow"><a class="anchor" href="#_workflow"></a>Workflow</h3>
+<div class="paragraph">
+<p>Excenit RSS includes a customizable workflow engine to ensure all returns are approved by appropriate authorities before submission to BoG. By design, no return is submitted without approval. The RSS API only flags a return for submission after approval. The workflow also ensures that, returns that have been submitted to BoG are locked to prevent unauthorized edits. The workflow ensures that the status of each return is tracked and updated from when the returns are due to BoG up to submission. The Excenit RSS workflow implements other controls over returns. For example, when a return is pending BoG approval, they cannot be edited. If a return needs to be resubmitted, the CFO or an authorized representative will have to explicitly unlock it for edits to be made.</p>
+</div>
+<div class="paragraph">
+<p>At a minimum, RSS requires three (3) users with distinct roles to have it fully functioning. RSS comes predefined with the role rules which can easily be assigned to a user once created:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Administrator: Configures RSS out of box, has full unrestricted access to RSS.</p>
+</li>
+<li>
+<p>Report Manager: Loads data, review data, review validation report, generates report and submits report for approval.</p>
+</li>
+<li>
+<p>CFO: Reviews data, can also review validation report, download a generated report, approve or decline report, dashboard access for activities on returns, pass comments on a report.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_analytics"><a class="anchor" href="#_analytics"></a>Analytics</h3>
+<div class="paragraph">
+<p>Excenit RSS includes built-in tools to analyze return data, particularly for MAFI and MBK returns. The analytic tools include interactive dashboards and interactive pivot tables, which users can use to generate summaries from the data. Specifically,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RSS comes out of the box with inbuilt interactive analytical and dashboard tools.</p>
+</li>
+<li>
+<p>RSS provides executives with dashboards for activities on return, like return due date and return submission date, and other parameters that might be useful for executive decision-making, including key performance indicators.</p>
+</li>
+<li>
+<p>Dashboards and analytic tools are customizable to meet specific client needs.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_messaging"><a class="anchor" href="#_messaging"></a>Messaging</h3>
+<div class="paragraph">
+<p>At every stage of the return submission process, Excenit RSS notifies users about the status of the returns and other activities. For example, when new returns are due to BoG, the responsible officers will be notified. Similarly, during return processing, approvers are notified when returns have been prepared and due for review and approval.</p>
+</div>
+<div class="paragraph">
+<p>To enhance RSS workflow processes, RSS allow mailing configuration like private internal SMTP parameters to be used or a public SMTP server.</p>
+</div>
+<div class="paragraph">
+<p>An email is sent to the appropriate identity in the workflow process for every core RSS functionality triggered.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_security"><a class="anchor" href="#_security"></a>Security</h3>
+<div class="paragraph">
+<p>Excenit RSS follows strict data governance protocol to ensure that data is safe, secure and free from manipulation.</p>
+</div>
+<div class="olist arabic">
+<div class="title">The following are key security elements of Excenit RSS:</div>
+<ol class="arabic">
+<li>
+<p>Restricted User Access – Access to Excenit RSS is role-based and fine-grained, which means application administrators can restrict user access to only the parts of the software they need.</p>
+</li>
+<li>
+<p>Tamper-proof Audit Log – Excenit RSS logs all user-changes to return data loaded from the staging database into the RSS database.</p>
+</li>
+<li>
+<p>Secured Data Transmission – Excenit RSS is a web application, which is deployed with industry standard security. All communications are encrypted via a Secure Sockets Layer (SSL) certificate.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_business_continuity"><a class="anchor" href="#_business_continuity"></a>Business Continuity</h3>
+
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div style="display: flex; justify-content: center; align-items: center;">Powered by Excenit</div>
+</footer><script id="site-script" src="../../../../assets/js/site.js" data-ui-root-path="../../../../assets"></script>
+<script async src="../../../../assets/js/vendor/highlight.js"></script>
+<script src="../../../../assets/js/vendor/lunr.js"></script>
+<script src="../../../../assets/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../assets/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>

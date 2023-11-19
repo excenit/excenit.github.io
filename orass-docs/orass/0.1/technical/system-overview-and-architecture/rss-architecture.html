@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Orass Documentation</title>
+    <title>RSS Architecture :: Orass Documentation</title>
     <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/technical/system-overview-and-architecture/rss-architecture.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../assets/css/site.css">
@@ -120,6 +120,9 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">System Overview and Architecture</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="system-overview.html">System Overview and Features</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="rss-architecture.html">RSS Architecture</a>
   </li>
@@ -138,10 +141,13 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system-requirements.html">System Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../setup-and-configuration.html">Setup And Configuration</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <span class="nav-text">Backup &amp; Recovery</span>
+    <a class="nav-link" href="../backup-and-recovery.html">Backup &amp; Recovery</a>
   </li>
 </ul>
   </li>
@@ -187,14 +193,38 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_rss_architecture"><a class="anchor" href="#_rss_architecture"></a>RSS Architecture</h2>
-<div class="sectionbody">
+<h1 class="page">RSS Architecture</h1>
+<div class="paragraph">
+<p>Excenit RSS is a web-based application, which comprises three major components. Each component has one or more modules
+which work together to ensure a seamless end-to-end automation of return submission to the ORASS system. Being web-based
+means that the application can be accessed through a web-browser. However, the application and its components reside on
+the premises or cloud infrastructure of the financial institution.</p>
+</div>
+<div class="paragraph">
+<p>The main components are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <strong>RSS Server</strong>&#8201;&#8212;&#8201;the application server which contains the web application (Excenit RSS) and manages access to the
+system, security, business logic, report templates, validation rules, workflow, messaging, file server, etc.</p>
+</li>
+<li>
+<p>The <strong>Application Database</strong>&#8201;&#8212;&#8201;an RDBMS which stores application settings, completed returns, application configurations,
+including API.</p>
+</li>
+<li>
+<p>The <strong>Staging Database/Warehouse</strong>&#8201;&#8212;&#8201;an RDBMS which contains ETL for loading source return data, business logic to generate data
+in accordance with ORASS rules, mapping to ORASS report items, etc.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Physically, all three components can reside on the same physical (or virtual) resource. However, to ensure</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="../../functional/_images/system-architecture-01.png" alt="Excenit RSS Architecture">
-</div>
-</div>
+<img src="../../functional/_images/system-architecture-01.jpg" alt="Excenit RSS Architecture">
 </div>
 </div>
 </article>
