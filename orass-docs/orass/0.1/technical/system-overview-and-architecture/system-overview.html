@@ -330,7 +330,7 @@
 </ol>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../../functional/_images/rss-basic-overview-02.jpg" alt="Simple Overview"></span></p>
+<p><span class="image"><img src="../../functional/_images/overview-architecture-01.jpg" alt="Simple Overview" title="Key Excenit RSS Systems"></span></p>
 </div>
 <div class="paragraph">
 <p>These systems connect to each other to create a fully functional Excenit RSS system. The servers identified in Figure 2 need not be physical computers. A virtualized environment provides similar performance. In addition, while not encouraged, some systems can share resources. For example, the RSS database can be located on the application server.</p>
@@ -342,6 +342,47 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>RSS has several key modules, which are loosely-coupled yet, provide a seamless end-to-end automation experience.</p>
+</div>
+<div class="ulist">
+<div class="title">The main modules are:</div>
+<ul>
+<li>
+<p>ETL process</p>
+</li>
+<li>
+<p>Data loading/report preparation</p>
+</li>
+<li>
+<p>Data validation</p>
+</li>
+<li>
+<p>Return generation</p>
+</li>
+<li>
+<p>Return submission</p>
+</li>
+<li>
+<p>API</p>
+</li>
+<li>
+<p>Workflow</p>
+</li>
+<li>
+<p>Analytics</p>
+</li>
+<li>
+<p>Messaging</p>
+</li>
+<li>
+<p>Security</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These modules together provide the complete automated return submission experience from Excenit.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../functional/_images/system-overview-01.jpg" alt="Overview of process"></span></p>
 </div>
 <div class="sect2">
 <h3 id="_extract_transform_and_load_with_data_mapping"><a class="anchor" href="#_extract_transform_and_load_with_data_mapping"></a>Extract, Transform, and Load with Data Mapping</h3>
@@ -402,7 +443,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_return_generation"><a class="anchor" href="#_return_generation"></a>Return Generation</h3>
+<h3 id="_report_generation"><a class="anchor" href="#_report_generation"></a>Report Generation</h3>
 <div class="paragraph">
 <p>Excenit RSS populates the BoG return templates (Microsoft Excel or XML) with data that validated. Reports generated and submitted for approval.</p>
 </div>
@@ -513,7 +554,9 @@
 </div>
 <div class="sect2">
 <h3 id="_business_continuity"><a class="anchor" href="#_business_continuity"></a>Business Continuity</h3>
-
+<div class="paragraph">
+<p>Excenit RSS includes an automated backup and recovery tools that ensure point in time recovery (PITR) of the application database. In addition, completed returns, which are by default saved to the application server are backed up to an external location and the application database. To recap, the application database contains completed returns, data for generating returns</p>
+</div>
 </div>
 </div>
 </div>
