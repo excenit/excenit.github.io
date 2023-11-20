@@ -196,50 +196,111 @@
 <div class="paragraph">
 <p>On this page you will find a detailed description of all the configuration properties in the Excenit RSS system.</p>
 </div>
-<table class="tableblock frame-none grid-rows stripes-odd fit-content">
+<div class="paragraph">
+<p>The <strong>API Settings </strong> properties determine how to connect to the BOG ORASS API.</p>
+</div>
+<table class="tableblock frame-none grid-rows stretch">
+<caption class="title">Table 1. Application Properties for Excenit RSS: API Settings (<code>orass&#8594;api&#8594;settings</code>)</caption>
 <colgroup>
-<col>
-<col>
-<col>
-<col>
-<col>
-<col>
-<col>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Section</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Values</th>
-<th class="tableblock halign-left valign-top">Default</th>
-<th class="tableblock halign-left valign-top">Notes</th>
+<th class="tableblock halign-left valign-top">Data type/Values</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">API Settings</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the machine user in the ORASS API system</p></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><code>orass&#8594;api&#8594;settings</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Any string</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only the machine user password will work with ORASS API</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>password</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the machine user in the ORASS API system. Only the machine user password will work with the ORASS API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Username for the machine user in the ORASS API system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A valid email address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:your_api@somedomain.com">your_api@somedomain.com</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is typically an email address</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: None</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>baseUrl</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Base URL of the ORASS API</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Valid URL wit the protocol included</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://orassvas.bog.gov.gh" class="bare">https://orassvas.bog.gov.gh</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username for the machine user in the ORASS API system. This is typically an email address.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String/Valid password complexity requirements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>your_api@somedomain.com</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>baseUrl</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base URL of the ORASS API. Valid URL with the protocol included but exclude the folders. There should be no trailing slashes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String/Valid URL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code><a href="https://orassvas.bog.gov.gh" class="bare">https://orassvas.bog.gov.gh</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>returnEndpoint</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the API returns. This keeps track of the API version.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String/Valid URL path</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>/v1/returns</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>tokenEndpoint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The endpoint for retrieving the authorization token to the ORASS API.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String/Valid URL path</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>/oauth2/token</code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-rows stretch">
+<caption class="title">Table 2. Application Properties for Excenit RSS: ETL Options (<code>orass&#8594;api&#8594;settings</code>)</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data type/Values</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>batchSubmission</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should the return be submitted immediately upon approval (YES) or in batch mode, where all returns within a default
+window are submitted together.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>YES</code>, <code>NO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>YES</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>emptyValuesToZero</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When writing values to Excel templates, should cells with no value be set to zero?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>YES</code>, <code>NO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>NO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>skipEmptyFormulas</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When writing values to Excel templates, should cells with no value be set to zero?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>YES</code>, <code>NO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>NO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>unlockSheets</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should report templates be unlocked for edits?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>YES</code>, <code>NO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>NO</code></p></td>
 </tr>
 </tbody>
 </table>
