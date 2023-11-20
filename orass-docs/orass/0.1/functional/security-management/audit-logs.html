@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Analytics :: Orass Documentation</title>
-    <link rel="canonical" href="https://docs.excenitapps.com/orass-documentation/0.1/functional/return-submission/analytics.html">
-    <meta name="description" content="Generate dynamic tables to analyze results">
+    <title>Auditing :: Orass Documentation</title>
+    <link rel="canonical" href="https://docs.excenitapps.com/orass/0.1/functional/security-management/audit-logs.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../assets/css/site.css">
 <link rel="icon" href="../../../../favicon.ico" type="image/x-icon">  </head>
@@ -41,7 +40,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="orass-documentation" data-version="0.1">
+<div class="nav-container" data-component="orass" data-version="0.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -67,22 +66,22 @@
     <span class="nav-text">Return Preparation and Submission</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="quick-tour.html">Quick Tour</a>
+    <a class="nav-link" href="../return-submission/quick-tour.html">Quick Tour</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="data-loading.html">Data Loading</a>
+    <a class="nav-link" href="../return-submission/data-loading.html">Data Loading</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="data-validation.html">Data Validation</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="analytics.html">Analytics</a>
+    <a class="nav-link" href="../return-submission/data-validation.html">Data Validation</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="report-generation.html">Report Generation</a>
+    <a class="nav-link" href="../return-submission/analytics.html">Analytics</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="workflow.html">Workflow</a>
+    <a class="nav-link" href="../return-submission/report-generation.html">Report Generation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../return-submission/workflow.html">Workflow</a>
   </li>
 </ul>
   </li>
@@ -90,11 +89,11 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Security Management</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../security-management/audit-logs.html">Audit Logs</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="audit-logs.html">Audit Logs</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../security-management/user-management.html">User Management</a>
+    <a class="nav-link" href="user-management.html">User Management</a>
   </li>
 </ul>
   </li>
@@ -179,12 +178,13 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../index.html">Excenit RSS (Orass) Documentation</a></li>
     <li>Functional</li>
-    <li>Return Preparation and Submission</li>
-    <li><a href="analytics.html">Analytics</a></li>
+    <li>Security Management</li>
+    <li><a href="audit-logs.html">Audit Logs</a></li>
   </ul>
 </nav>
 </div>
@@ -193,82 +193,59 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Analytics</h1>
-<div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
-<div class="sectionbody">
+<h1 class="page">Auditing</h1>
 <div class="paragraph">
-<p>Excenit RSS includes a ready-to-use analytic tool to help you gain insights into your data. This manual only describes the built-in tools. Consult specialized manual for your institution if you have a customized analytics solution.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_analyze_data_using_dynamic_pivot"><a class="anchor" href="#_analyze_data_using_dynamic_pivot"></a>Analyze Data using Dynamic Pivot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Dynamic analyses are most relevant on annexes that have multiple records, i.e., not summary data. Examples include MAFI 100, 200, 900, etc.</p>
+<p>ORASS returns provide critical supervisory data to Bank of Ghana. Excenit RSS provides a fine-grained audit tracking
+feature. When activated, all changes to data loading are logged. Due to the resource cost of fine-grained auditing,
+they are disabled by default and must be explicitly activated for each table.</p>
 </div>
 <div class="paragraph">
-<p>To analyze a return:</p>
+<p>To setup audit logging:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open the return in edit mode and navigate to the annex.</p>
+<p>Go to <strong>System&#8594; Entity Log</strong>.</p>
 </li>
 <li>
-<p>Switch to the <em>Summary &amp; Interactive Analysis</em> tab.</p>
+<p>Navigate to the <strong>Setup</strong> tab and click <code>Create</code>.</p>
 </li>
 <li>
-<p>There are several types of charts available (Box 1) and analyses (Box 2). Select the type of chart (table, barchart, heatmap, etc.) and the type of analyses, including sum, average, sum over sum, etc.</p>
+<p>In the <code>Name</code> dropdown box. select the RSS table to be audited. Tables are named after the returns.</p>
 </li>
 <li>
-<p>Select the variables for the analyses. The variables correspond to columns, are listed in Box 2.</p>
+<p>Select the attributes for which we want to log and click <code>Save</code> to close.</p>
 </li>
 <li>
-<p>Select the summary variables from Box 3 and place them in either Box 4 or Box 5 depending on how you want the chart displayed. You can always switch column and rows using the arrows in Box 2.</p>
+<p>Then click <code>Apply Changes</code>.</p>
+</li>
+<li>
+<p>The table should be listed in the middle pane.</p>
 </li>
 </ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/analytics_step-01.png" alt="Analytics layout">
-</div>
 </div>
 <div class="paragraph">
-<p>Suppose we are interested in the average <code>Loan Amt. Disbursed</code> (from MAFI 100), and we want to group the data by branch and gender using a bar chart.</p>
+<p><span class="image"><img src="../_images/audit-logs-01.jpg" alt="Create Audit Logs"></span></p>
 </div>
 <div class="olist arabic">
+<div class="title">To confirm that the changes are being tracked, make changes to a loaded report that is editable and:</div>
 <ol class="arabic">
 <li>
-<p>Select <code>Bar Chart</code> from Box 1.</p>
+<p>Go to <strong>System&#8594; Entity Log</strong></p>
 </li>
 <li>
-<p>Select <code>Average</code> as the summary function in Box 2.</p>
+<p>Switch to the <code>View</code> tab and click <code>Search</code> (without any other criteria) to load entities that have their logging
+configured.</p>
 </li>
 <li>
-<p>Drag <code>Gender</code> from Box 3 into Box 4.</p>
-</li>
-<li>
-<p>Drag <code>Branch Name</code> to Box 5.</p>
-</li>
-<li>
-<p>Drag the variables into Box 4 or Box 5 depending on how you want to data to be displayed. In this example, we want the <code>Branch Name</code> on the x-axis and the average <code>Loan Amt. Disbursed</code> on the y-axis. So, we will place the <code>Gender</code> field in Box 4 and <code>Branch Name</code> in Box 5.</p>
-</li>
-<li>
-<p>Select the variable of interest, <code>Loan Amt. Disbursed</code> from Box 2 below the analysis dropdown.</p>
-</li>
-<li>
-<p>The results will be displayed in Box 6.</p>
+<p>The log shows that the entity <code>Mafi400Detail</code>, <code>who</code> modified, the <code>type</code> of change (<code>Insert, Modify, Delete</code>),
+the primary key (or ID). In addition, the log tracks the fields (<code>Attribute Name</code>)  and values (<code>Old value</code>) that changed
+(<code>New value</code>).</p>
 </li>
 </ol>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/analytics_step-02.png" alt="Sample analytics">
-</div>
-</div>
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/audit-logs-02.jpg" alt="Review audited logs"></span></p>
 </div>
 </article>
   </div>
