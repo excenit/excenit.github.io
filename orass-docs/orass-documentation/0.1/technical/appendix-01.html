@@ -193,9 +193,16 @@
 </aside>
 <article class="doc">
 <h1 class="page">Appendix 1: Properties Reference</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>On this page you will find a detailed description of all the configuration properties in the Excenit RSS system.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_settings"><a class="anchor" href="#_api_settings"></a>API Settings</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>API Settings </strong> properties determine how to connect to the BOG ORASS API.</p>
 </div>
@@ -256,6 +263,11 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>Options</h2>
+<div class="sectionbody">
 <table class="tableblock frame-none grid-rows stretch">
 <caption class="title">Table 2. Application Properties for Excenit RSS: ETL Options (<code>orass&#8594;api&#8594;settings</code>)</caption>
 <colgroup>
@@ -304,6 +316,57 @@ window are submitted together.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_institution_information"><a class="anchor" href="#_institution_information"></a>Institution Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These properties determine the values that are included in the attestation form (AF100) of each return. They are issued
+by BOG and must match exactly what is in the ORASS API. There is no guarantee that the returns would be accepted by the
+ORASS API if any of them is incorrect.</p>
+</div>
+<table class="tableblock frame-none grid-rows stretch">
+<caption class="title">Table 3. Application Properties for Excenit RSS: Institution Details(<code>orass&#8594;return&#8594;options&#8594;institution</code>)</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data type/Values</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOG-issued <code>id</code> for your institution in the ORASS system.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>65</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOG-issued <code>name</code> for your institution in the ORASS system.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String. Must match what is in BoG&#8217;s system exactly.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>Excenit</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>referenceCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOG-issued <code>reference code</code> for your institution in the ORASS system.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String. Must match what is in BoG&#8217;s system exactly.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>Excenit</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </article>
   </div>
 </main>
