@@ -208,10 +208,11 @@
 <h2 id="_api_settings"><a class="anchor" href="#_api_settings"></a>API Settings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>API Settings </strong> properties determine how to connect to the BOG ORASS API.</p>
+<p>The <strong>API Settings </strong> properties determine how to connect to the BOG ORASS API.
+Node: <code>orass&#8594;api&#8594;settings</code>.</p>
 </div>
 <table class="tableblock frame-none grid-rows stretch">
-<caption class="title">Table 1. Application Properties for Excenit RSS: API Settings (<code>orass&#8594;api&#8594;settings</code>)</caption>
+<caption class="title">Table 1. Application Properties for Excenit RSS: API Settings</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -272,8 +273,12 @@
 <div class="sect1">
 <h2 id="_options"><a class="anchor" href="#_options"></a>Options</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>These properties control how the returns data are loaded and the written to the report templates.
+Node: <code>orass&#8594;api&#8594;settings</code></p>
+</div>
 <table class="tableblock frame-none grid-rows stretch">
-<caption class="title">Table 2. Application Properties for Excenit RSS: ETL Options (<code>orass&#8594;api&#8594;settings</code>)</caption>
+<caption class="title">Table 2. Application Properties for Excenit RSS: ETL Options</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -318,6 +323,14 @@ window are submitted together.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>NO</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>validRecordsOnly</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When writing data to the report templates, should records that are not flagged as <code>VALID</code> be included?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>YES</code>, <code>NO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>NO</code></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -330,8 +343,11 @@ window are submitted together.</p></td>
 by BOG and must match exactly what is in the ORASS API. There is no guarantee that the returns would be accepted by the
 ORASS API if any of them is incorrect.</p>
 </div>
+<div class="paragraph">
+<p>Node: <code>orass&#8594;return&#8594;options&#8594;institution</code></p>
+</div>
 <table class="tableblock frame-none grid-rows stretch">
-<caption class="title">Table 3. Application Properties for Excenit RSS: Institution Details(<code>orass&#8594;return&#8594;options&#8594;institution</code>)</caption>
+<caption class="title">Table 3. Application Properties for Excenit RSS: Institution Details</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -366,6 +382,56 @@ ORASS API if any of them is incorrect.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>Excenit</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_smtp_email_configuration"><a class="anchor" href="#_smtp_email_configuration"></a>SMTP Email Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use these properties to define the custom SMTP server for your organization.</p>
+</div>
+<div class="paragraph">
+<p>Node: <code>excenit&#8594;email</code></p>
+</div>
+<table class="tableblock frame-none grid-rows stretch">
+<caption class="title">Table 4. Application Properties for Excenit RSS: Institution Details</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data type/Values</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>adminAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default email address of the <code>admin</code> user. This email is used to send system messages via SMTP.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>admin@admin.com</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>allowutf8</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow UTF8 character set to be used in sending emails.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean (<code>true/false</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>defaultSendingAttemptsCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of times server will attempt to send an email before giving up.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Default: <code>5</code></p></td>
 </tr>
 </tbody>
 </table>

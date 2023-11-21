@@ -222,13 +222,16 @@ in accordance with ORASS rules, mapping to ORASS report items, etc.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Physically, all three components can reside on the same physical (or virtual) resource. However, to ensure</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="../../functional/_images/system-architecture-01.jpg" alt="Excenit RSS Architecture">
 </div>
+</div>
+<div class="paragraph">
+<p>Physically, all three components can reside on the same physical (or virtual) resource, depending on the size of the data
+and the expected performance. When possible, we recommend that all three applications reside on their own instance.
+The RSS Server and Staging Database can reside on the same server if the minimum requirements in <a href="system-overview.html" class="xref page">System Overview &amp; Features</a>
+are exceeded.</p>
 </div>
 </article>
   </div>
